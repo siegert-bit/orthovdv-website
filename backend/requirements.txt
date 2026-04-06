@@ -3,4 +3,4 @@ uvicorn
 gunicorn
 resend
 python-dotenv
-pymongo
+motor
