@@ -1,0 +1,113 @@
+{
+  "summary": {
+    "tests_run": 5,
+    "tests_passed": 5,
+    "success_rate": 100.0,
+    "timestamp": "2026-04-05T10:25:00.010120"
+  },
+  "test_results": [
+    {
+      "test_name": "Root API Endpoint",
+      "method": "GET",
+      "endpoint": "",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "timestamp": "2026-04-05T10:24:59.010196",
+      "response_data": {
+        "message": "Hello World"
+      }
+    },
+    {
+      "test_name": "Contact Form Submission",
+      "method": "POST",
+      "endpoint": "contact/submit",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "timestamp": "2026-04-05T10:24:59.583699",
+      "response_data": {
+        "status": "success",
+        "message": "Uw aanvraag is succesvol ontvangen. U ontvangt een bevestigingsmail.",
+        "submission_id": "19db3dae-a927-4658-9a99-52bac3b04b87",
+        "email_status": "failed"
+      }
+    },
+    {
+      "test_name": "Contact Form Validation (Missing Name)",
+      "method": "POST",
+      "endpoint": "contact/submit",
+      "expected_status": 422,
+      "actual_status": 422,
+      "success": true,
+      "timestamp": "2026-04-05T10:24:59.717423",
+      "response_data": {
+        "detail": [
+          {
+            "type": "missing",
+            "loc": [
+              "body",
+              "name"
+            ],
+            "msg": "Field required",
+            "input": {
+              "email": "test@example.com",
+              "phone": "+32472123456",
+              "location": "Antwerpen"
+            },
+            "url": "https://errors.pydantic.dev/2.12/v/missing"
+          }
+        ]
+      }
+    },
+    {
+      "test_name": "Contact Form Invalid Email",
+      "method": "POST",
+      "endpoint": "contact/submit",
+      "expected_status": 422,
+      "actual_status": 422,
+      "success": true,
+      "timestamp": "2026-04-05T10:24:59.877119",
+      "response_data": {
+        "detail": [
+          {
+            "type": "value_error",
+            "loc": [
+              "body",
+              "email"
+            ],
+            "msg": "value is not a valid email address: An email address must have an @-sign.",
+            "input": "invalid-email",
+            "ctx": {
+              "reason": "An email address must have an @-sign."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "test_name": "Get Contact Submissions",
+      "method": "GET",
+      "endpoint": "contact/submissions",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "timestamp": "2026-04-05T10:25:00.008523",
+      "response_data": {
+        "submissions": [
+          {
+            "id": "19db3dae-a927-4658-9a99-52bac3b04b87",
+            "name": "Test Gebruiker",
+            "email": "test@example.com",
+            "phone": "+32472123456",
+            "location": "Antwerpen",
+            "message": "Dit is een test bericht voor de contact form.",
+            "created_at": "2026-04-05T10:24:59.103000",
+            "status": "new"
+          }
+        ],
+        "count": 1
+      }
+    }
+  ]
+}
