@@ -4,3 +4,4 @@ gunicorn
 resend
 python-dotenv
 motor
+email-validator
