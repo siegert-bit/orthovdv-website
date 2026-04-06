@@ -1,6 +1,6 @@
-flask
-flask-cors
+fastapi
+uvicorn
+gunicorn
 resend
 python-dotenv
 pymongo
-gunicorn
