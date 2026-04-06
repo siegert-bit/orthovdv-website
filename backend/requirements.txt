@@ -1,7 +1,8 @@
-fastapi
-uvicorn
-gunicorn
-resend
-python-dotenv
-motor
+dnspython
 email-validator
+fastapi
+gunicorn
+motor
+python-dotenv
+resend
+uvicorn
