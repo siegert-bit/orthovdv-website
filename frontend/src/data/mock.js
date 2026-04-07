@@ -37,20 +37,20 @@ export const services = [
 export const processSteps = [
   {
     id: 1,
-    title: "Telefonische Intake",
-    description: "We bespreken uw klachten, behoeften en verwachtingen telefonisch. Hierna plannen we een afspraak bij u thuis op een moment dat u uitkomt.",
+    title: "Bezoek aan Huis",
+    description: "Ik kom bij u langs voor een grondige voetanalyse en maatname. Inclusief 3D-maatname voor de perfecte pasvorm van uw maatwerk schoenen.",
     icon: "phone"
   },
   {
     id: 2,
-    title: "Bezoek aan Huis",
-    description: "Ik kom bij u langs voor een grondige voetanalyse en maatname. Inclusief gipsafdruk voor de perfecte pasvorm van uw maatwerk schoenen.",
+    title: "Passessie",
+    description: "Op basis van de 3D-scan vervaardigen we een transparante passchoen om de pasvorm en drukpunten nauwkeurig te controleren en te optimaliseren vóór de finale afwerking",
     icon: "home"
   },
   {
     id: 3,
-    title: "Passessie & Levering",
-    description: "Uw nieuwe schoenen worden opnieuw bij u thuis gepast en afgeleverd. Eventuele kleine aanpassingen worden direct uitgevoerd voor optimaal comfort.",
+    title: "Levering",
+    description: "Uw definitieve maatschoenen worden bij u thuis afgeleverd. We controleren samen het resultaat en het loopcomfort, inclusief advies over gebruik en onderhoud.",
     icon: "check-circle"
   }
 ];
@@ -58,7 +58,7 @@ export const processSteps = [
 export const aboutContent = {
   title: "Uw Orthopedisch Schoentechnoloog",
   paragraphs: [
-    "Als gediplomeerd orthopedisch schoentechnoloog help ik mensen met voetproblemen al jarenlang aan kwalitatief hoogstaand maatwerk schoeisel. Mijn expertise ligt in het creëren van orthopedische schoenen die niet alleen functioneel zijn, maar ook comfortabel en esthetisch verantwoord.",
+    "Als gediplomeerd erkend orthopedisch schoentechnoloog help ik mensen met voetproblemen al jarenlang aan kwalitatief hoogstaand maatwerk schoeisel. Mijn expertise ligt in het creëren van orthopedische schoenen die niet alleen functioneel zijn, maar ook comfortabel en esthetisch verantwoord.",
     "Wat mijn service uniek maakt? Ik kom bij u thuis, waar u ook in België woont. Geen afstandsbeperking, geen stress om naar een werkplaats te komen. De volledige zorg – van eerste analyse tot finale levering – vindt plaats in de vertrouwde omgeving van uw eigen huis."
   ]
 };
