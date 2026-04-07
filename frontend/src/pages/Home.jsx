@@ -519,6 +519,9 @@ export const Home = () => {
                     >
                       {isSubmitting ? 'Verzenden...' : 'Verstuur Aanvraag'}
                     </Button>
+                    <p className="mt-4 text-[10px] text-gray-400 italic text-center leading-relaxed">
+  Opmerking: De eerste aanvraag kan tot 60 seconden duren terwijl onze beveiligde server opstart.
+</p>
                   </form>
                 </CardContent>
               </Card>
