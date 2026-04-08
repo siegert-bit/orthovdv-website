@@ -88,7 +88,7 @@ export const Home = () => {
               <Button 
                 onClick={handleCall} 
                 size="sm" 
-                className="flex-1 max-w-[160px] bg-[#ffcc4f] hover:bg-[#F4A531] text-[#1A4D4D] font-semibold"
+                className="flex-1 max-w-[160px] bg-[#ffcc4f] hover:bg-[#F4A531] text-[#0e4b4c] font-semibold"
               >
                 <Phone className="h-4 w-4 mr-2" />
                 <span>Bel Mij</span>
@@ -107,7 +107,7 @@ export const Home = () => {
 
           {/* Mobile Menu Dropdown */}
           {mobileMenuOpen && (
-            <div className="md:hidden bg-[#1A4D4D]/95 backdrop-blur-lg rounded-lg p-4 mt-2">
+            <div className="md:hidden bg-[#0e4b4c]/95 backdrop-blur-lg rounded-lg p-4 mt-2">
               <nav className="flex flex-col gap-3">
                 <a 
                   href="#diensten" 
@@ -171,7 +171,7 @@ export const Home = () => {
               <Button 
                 onClick={handleCall} 
                 size="sm" 
-                className="bg-[#F4A531] hover:bg-[#E09520] text-[#1A4D4D] font-semibold text-sm"
+                className="bg-[#F4A531] hover:bg-[#E09520] text-[#0e4b4c] font-semibold text-sm"
               >
                 <Phone className="h-4 w-4 mr-2" />
                 <span>Bel Mij</span>
@@ -245,7 +245,7 @@ export const Home = () => {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
             <div className="order-2 md:order-1">
-              <div className="inline-block px-4 py-2 bg-[#70C6A5]/20 text-[#1A4D4D] rounded-full text-sm font-semibold mb-6">
+              <div className="inline-block px-4 py-2 bg-[#70C6A5]/20 text-[#0e4b4c] rounded-full text-sm font-semibold mb-6">
                 Erkend Specialist
               </div>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
@@ -260,14 +260,14 @@ export const Home = () => {
                 <h3 className="font-semibold text-gray-900 mb-4">Professionele Gegevens</h3>
                 <div className="space-y-3 text-sm">
                   <div className="flex items-center gap-3">
-                    <Award className="h-5 w-5 text-[#1A4D4D]" />
+                    <Award className="h-5 w-5 text-[#0e4b4c]" />
                     <div>
                       <span className="font-medium text-gray-900">RIZIV:</span>
                       <span className="ml-2 text-gray-700">{contactInfo.riziv}</span>
                     </div>
                   </div>
                   <div className="flex items-center gap-3">
-                    <MapPin className="h-5 w-5 text-[#1A4D4D]" />
+                    <MapPin className="h-5 w-5 text-[#0e4b4c]" />
                     <div>
                       <span className="font-medium text-gray-900">Praktijk:</span>
                       <span className="ml-2 text-gray-700">{contactInfo.address}</span>
@@ -294,7 +294,7 @@ export const Home = () => {
       <section id="diensten" className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <div className="inline-block px-4 py-2 bg-[#70C6A5]/20 text-[#1A4D4D] rounded-full text-sm font-semibold mb-6">
+            <div className="inline-block px-4 py-2 bg-[#70C6A5]/20 text-[#0e4b4c] rounded-full text-sm font-semibold mb-6">
               Mijn Expertise
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -309,10 +309,10 @@ export const Home = () => {
             {services.map((service, index) => (
               <Card key={service.id} className="border-2 hover:border-[#70C6A5] hover:shadow-xl transition-all duration-300 group">
                 <CardHeader>
-                  <div className="w-14 h-14 bg-[#70C6A5]/20 rounded-xl flex items-center justify-center mb-4 group-hover:bg-[#1A4D4D] transition-colors">
-                    {service.icon === 'shoe' && <Award className="h-7 w-7 text-[#1A4D4D] group-hover:text-white transition-colors" />}
-                    {service.icon === 'footprints' && <Shield className="h-7 w-7 text-[#1A4D4D] group-hover:text-white transition-colors" />}
-                    {service.icon === 'search' && <Clock className="h-7 w-7 text-[#1A4D4D] group-hover:text-white transition-colors" />}
+                  <div className="w-14 h-14 bg-[#70C6A5]/20 rounded-xl flex items-center justify-center mb-4 group-hover:bg-[#0e4b4c] transition-colors">
+                    {service.icon === 'shoe' && <Award className="h-7 w-7 text-[#0e4b4c] group-hover:text-white transition-colors" />}
+                    {service.icon === 'footprints' && <Shield className="h-7 w-7 text-[#0e4b4c] group-hover:text-white transition-colors" />}
+                    {service.icon === 'search' && <Clock className="h-7 w-7 text-[#0e4b4c] group-hover:text-white transition-colors" />}
                   </div>
                   <CardTitle className="text-xl">{service.title}</CardTitle>
                 </CardHeader>
@@ -328,11 +328,11 @@ export const Home = () => {
       </section>
 
       {/* USP Section - Service at Home */}
-      <section className="py-20 bg-gradient-to-br from-[#70C6A5]/10 to-[#1A4D4D]/5">
+      <section className="py-20 bg-gradient-to-br from-[#70C6A5]/10 to-[#0e4b4c]/5">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
-              <div className="inline-block px-4 py-2 bg-[#1A4D4D] text-white rounded-full text-sm font-semibold mb-6">
+              <div className="inline-block px-4 py-2 bg-[#0e4b4c] text-white rounded-full text-sm font-semibold mb-6">
                 Unieke Service
               </div>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -353,7 +353,7 @@ export const Home = () => {
               </div>
               <div className="space-y-6">
                 <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-12 h-12 bg-[#1A4D4D] rounded-lg flex items-center justify-center">
+                  <div className="flex-shrink-0 w-12 h-12 bg-[#0e4b4c] rounded-lg flex items-center justify-center">
                     <MapPin className="h-6 w-6 text-white" />
                   </div>
                   <div>
@@ -362,7 +362,7 @@ export const Home = () => {
                   </div>
                 </div>
                 <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-12 h-12 bg-[#1A4D4D] rounded-lg flex items-center justify-center">
+                  <div className="flex-shrink-0 w-12 h-12 bg-[#0e4b4c] rounded-lg flex items-center justify-center">
                     <Clock className="h-6 w-6 text-white" />
                   </div>
                   <div>
@@ -371,7 +371,7 @@ export const Home = () => {
                   </div>
                 </div>
                 <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-12 h-12 bg-[#1A4D4D] rounded-lg flex items-center justify-center">
+                  <div className="flex-shrink-0 w-12 h-12 bg-[#0e4b4c] rounded-lg flex items-center justify-center">
                     <Award className="h-6 w-6 text-white" />
                   </div>
                   <div>
@@ -389,7 +389,7 @@ export const Home = () => {
       <section id="werkwijze" className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <div className="inline-block px-4 py-2 bg-[#70C6A5]/20 text-[#1A4D4D] rounded-full text-sm font-semibold mb-6">
+            <div className="inline-block px-4 py-2 bg-[#70C6A5]/20 text-[#0e4b4c] rounded-full text-sm font-semibold mb-6">
               Hoe Het Werkt
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -405,7 +405,7 @@ export const Home = () => {
               {processSteps.map((step, index) => (
                 <div key={step.id} className="flex gap-6 items-start group">
                   <div className="flex-shrink-0">
-                    <div className="w-16 h-16 bg-[#1A4D4D] text-white rounded-full flex items-center justify-center text-2xl font-bold shadow-lg group-hover:scale-110 transition-transform">
+                    <div className="w-16 h-16 bg-[#0e4b4c] text-white rounded-full flex items-center justify-center text-2xl font-bold shadow-lg group-hover:scale-110 transition-transform">
                       {index + 1}
                     </div>
                   </div>
@@ -423,12 +423,12 @@ export const Home = () => {
               <img 
                 src="/images/logo-vdv.jpg"
                 alt="Van de Voorde Orthopedie"
-                className="rounded-xl shadow-lg h-64 w-full object-contain bg-[#1A4D4D] p-6"
+                className="rounded-xl shadow-lg h-64 w-full object-contain bg-[#0e4b4c] p-6"
               />
               <img 
                 src="/images/logo-vdv.jpg"
                 alt="Van de Voorde Orthopedie"
-                className="rounded-xl shadow-lg h-64 w-full object-contain bg-[#1A4D4D] p-6"
+                className="rounded-xl shadow-lg h-64 w-full object-contain bg-[#0e4b4c] p-6"
               />
             </div>
           </div>
