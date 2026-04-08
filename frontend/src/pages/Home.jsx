@@ -182,7 +182,7 @@ export const Home = () => {
       </header>
 
       {/* Hero Section with Full-Width Banner */}
-      <section className="relative bg-[#1A4D4D] text-white overflow-hidden pt-72 md:pt-80 lg:pt-96 pb-16 md:pb-24 lg:pb-32">
+      <section className="relative bg-[#0e4b4c] text-white overflow-hidden pt-72 md:pt-80 lg:pt-96 pb-16 md:pb-24 lg:pb-32">
         {/* Full-width Banner Background */}
         <div className="absolute inset-0">
           <img 
@@ -190,7 +190,7 @@ export const Home = () => {
             alt="Van de Voorde Orthopedie Banner"
             className="w-full h-full object-cover opacity-20"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#1A4D4D]/95 via-[#1A4D4D]/90 to-[#1A4D4D]/80"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0e4b4c]/95 via-[#0e4b4c]/90 to-[#0e4b4c]/80"></div>
         </div>
         
         <div className="container mx-auto px-4 relative z-10">
@@ -208,7 +208,7 @@ export const Home = () => {
               <Button 
                 onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}
                 size="lg" 
-                className="bg-[#F4A531] hover:bg-[#E09520] text-[#1A4D4D] font-semibold text-base md:text-lg px-6 md:px-8 py-5 md:py-6 w-full sm:w-auto"
+                className="bg-[#F4A531] hover:bg-[#E09520] text-[#0e4b4c] font-semibold text-base md:text-lg px-6 md:px-8 py-5 md:py-6 w-full sm:w-auto"
               >
                 Maak een Afspraak
               </Button>
