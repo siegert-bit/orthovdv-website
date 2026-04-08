@@ -88,7 +88,7 @@ export const Home = () => {
               <Button 
                 onClick={handleCall} 
                 size="sm" 
-                className="flex-1 max-w-[160px] bg-[#F4A531] hover:bg-[#E09520] text-[#1A4D4D] font-semibold"
+                className="flex-1 max-w-[160px] bg-[#ffcc4f] hover:bg-[#F4A531] text-[#1A4D4D] font-semibold"
               >
                 <Phone className="h-4 w-4 mr-2" />
                 <span>Bel Mij</span>
