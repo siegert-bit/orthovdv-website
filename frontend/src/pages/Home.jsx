@@ -224,15 +224,15 @@ export const Home = () => {
             </div>
             <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6 pt-6 md:pt-8 text-sm md:text-base">
               <div className="flex items-center gap-2">
-                <Shield className="h-4 w-4 md:h-5 md:w-5 text-[#70C6A5]" />
+                <Shield className="h-4 w-4 md:h-5 md:w-5 text-[#3bae75]" />
                 <span>RIZIV Erkend</span>
               </div>
               <div className="flex items-center gap-2">
-                <Award className="h-4 w-4 md:h-5 md:w-5 text-[#70C6A5]" />
+                <Award className="h-4 w-4 md:h-5 md:w-5 text-[#3bae75]" />
                 <span>Vakbekwaam Specialist</span>
               </div>
               <div className="flex items-center gap-2">
-                <Clock className="h-4 w-4 md:h-5 md:w-5 text-[#70C6A5]" />
+                <Clock className="h-4 w-4 md:h-5 md:w-5 text-[#3bae75]" />
                 <span>Flexibele Planning</span>
               </div>
             </div>
@@ -245,7 +245,7 @@ export const Home = () => {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
             <div className="order-2 md:order-1">
-              <div className="inline-block px-4 py-2 bg-[#70C6A5]/20 text-[#0e4b4c] rounded-full text-sm font-semibold mb-6">
+              <div className="inline-block px-4 py-2 bg-[#3bae75]/20 text-[#0e4b4c] rounded-full text-sm font-semibold mb-6">
                 Erkend Specialist
               </div>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
@@ -278,7 +278,7 @@ export const Home = () => {
             </div>
             <div className="order-1 md:order-2">
               <div className="relative">
-                <div className="absolute -inset-4 bg-gradient-to-br from-[#70C6A5] to-[#70C6A5]/60 rounded-2xl transform rotate-3"></div>
+                <div className="absolute -inset-4 bg-gradient-to-br from-[#3bae75] to-[#3bae75]/60 rounded-2xl transform rotate-3"></div>
                 <img 
                   src="/images/profile-siegert.jpg"
                   alt="Siegert Van de Voorde"
@@ -294,7 +294,7 @@ export const Home = () => {
       <section id="diensten" className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <div className="inline-block px-4 py-2 bg-[#70C6A5]/20 text-[#0e4b4c] rounded-full text-sm font-semibold mb-6">
+            <div className="inline-block px-4 py-2 bg-[#3bae75]/20 text-[#0e4b4c] rounded-full text-sm font-semibold mb-6">
               Mijn Expertise
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -307,9 +307,9 @@ export const Home = () => {
           
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {services.map((service, index) => (
-              <Card key={service.id} className="border-2 hover:border-[#70C6A5] hover:shadow-xl transition-all duration-300 group">
+              <Card key={service.id} className="border-2 hover:border-[#3bae75] hover:shadow-xl transition-all duration-300 group">
                 <CardHeader>
-                  <div className="w-14 h-14 bg-[#70C6A5]/20 rounded-xl flex items-center justify-center mb-4 group-hover:bg-[#0e4b4c] transition-colors">
+                  <div className="w-14 h-14 bg-[#3bae75]/20 rounded-xl flex items-center justify-center mb-4 group-hover:bg-[#0e4b4c] transition-colors">
                     {service.icon === 'shoe' && <Award className="h-7 w-7 text-[#0e4b4c] group-hover:text-white transition-colors" />}
                     {service.icon === 'footprints' && <Shield className="h-7 w-7 text-[#0e4b4c] group-hover:text-white transition-colors" />}
                     {service.icon === 'search' && <Clock className="h-7 w-7 text-[#0e4b4c] group-hover:text-white transition-colors" />}
@@ -328,7 +328,7 @@ export const Home = () => {
       </section>
 
       {/* USP Section - Service at Home */}
-      <section className="py-20 bg-gradient-to-br from-[#70C6A5]/10 to-[#0e4b4c]/5">
+      <section className="py-20 bg-gradient-to-br from-[#3bae75]/10 to-[#0e4b4c]/5">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
@@ -389,7 +389,7 @@ export const Home = () => {
       <section id="werkwijze" className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <div className="inline-block px-4 py-2 bg-[#70C6A5]/20 text-[#0e4b4c] rounded-full text-sm font-semibold mb-6">
+            <div className="inline-block px-4 py-2 bg-[#3bae75]/20 text-[#0e4b4c] rounded-full text-sm font-semibold mb-6">
               Hoe Het Werkt
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
