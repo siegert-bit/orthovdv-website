@@ -88,7 +88,7 @@ export const Home = () => {
               <Button 
                 onClick={handleCall} 
                 size="sm" 
-                className="flex-1 max-w-[160px] bg-[#ffcc4f] hover:bg-[#F4A531] text-[#0e4b4c] font-semibold"
+                className="flex-1 max-w-[160px] bg-[#ffcc4f] hover:bg-[#fdcc55] text-[#0e4b4c] font-semibold"
               >
                 <Phone className="h-4 w-4 mr-2" />
                 <span>Bel Mij</span>
@@ -171,7 +171,7 @@ export const Home = () => {
               <Button 
                 onClick={handleCall} 
                 size="sm" 
-                className="bg-[#ffcc4f] hover:bg-[#F4A531] text-[#0e4b4c] font-semibold text-sm"
+                className="bg-[#ffcc4f] hover:bg-[#fdcc55] text-[#0e4b4c] font-semibold text-sm"
               >
                 <Phone className="h-4 w-4 mr-2" />
                 <span>Bel Mij</span>
@@ -208,7 +208,7 @@ export const Home = () => {
               <Button 
                 onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}
                 size="lg" 
-                className="bg-[#ffcc4f] hover:bg-[#F4A531] text-[#0e4b4c] font-semibold text-base md:text-lg px-6 md:px-8 py-5 md:py-6 w-full sm:w-auto"
+                className="bg-[#ffcc4f] hover:bg-[#fdcc55] text-[#0e4b4c] font-semibold text-base md:text-lg px-6 md:px-8 py-5 md:py-6 w-full sm:w-auto"
               >
                 Maak een Afspraak
               </Button>
