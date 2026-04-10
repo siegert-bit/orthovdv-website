@@ -112,28 +112,28 @@ export const Home = () => {
                 <a 
                   href="#diensten" 
                   onClick={() => setMobileMenuOpen(false)}
-                  className="text-white hover:text-[#F4A531] transition-colors font-medium text-center py-2"
+                  className="text-white hover:text-[#ffcc4f] transition-colors font-medium text-center py-2"
                 >
                   Diensten
                 </a>
                 <a 
                   href="#over" 
                   onClick={() => setMobileMenuOpen(false)}
-                  className="text-white hover:text-[#F4A531] transition-colors font-medium text-center py-2"
+                  className="text-white hover:text-[#ffcc4f] transition-colors font-medium text-center py-2"
                 >
                   Over Mij
                 </a>
                 <a 
                   href="#werkwijze" 
                   onClick={() => setMobileMenuOpen(false)}
-                  className="text-white hover:text-[#F4A531] transition-colors font-medium text-center py-2"
+                  className="text-white hover:text-[#ffcc4f] transition-colors font-medium text-center py-2"
                 >
                   Werkwijze
                 </a>
                 <a 
                   href="#contact" 
                   onClick={() => setMobileMenuOpen(false)}
-                  className="text-white hover:text-[#F4A531] transition-colors font-medium text-center py-2"
+                  className="text-white hover:text-[#ffcc4f] transition-colors font-medium text-center py-2"
                 >
                   Contact
                 </a>
@@ -144,16 +144,16 @@ export const Home = () => {
           {/* Desktop: Navigation and Buttons - Centered Row */}
           <div className="hidden md:flex flex-row items-center justify-center gap-6 lg:gap-8 mt-3">
             <nav className="flex items-center gap-6 lg:gap-8">
-              <a href="#diensten" className="text-white hover:text-[#F4A531] transition-colors font-medium text-sm lg:text-base">
+              <a href="#diensten" className="text-white hover:text-[#ffcc4f] transition-colors font-medium text-sm lg:text-base">
                 Diensten
               </a>
-              <a href="#over" className="text-white hover:text-[#F4A531] transition-colors font-medium text-sm lg:text-base">
+              <a href="#over" className="text-white hover:text-[#ffcc4f] transition-colors font-medium text-sm lg:text-base">
                 Over Mij
               </a>
-              <a href="#werkwijze" className="text-white hover:text-[#F4A531] transition-colors font-medium text-sm lg:text-base">
+              <a href="#werkwijze" className="text-white hover:text-[#ffcc4f] transition-colors font-medium text-sm lg:text-base">
                 Werkwijze
               </a>
-              <a href="#contact" className="text-white hover:text-[#F4A531] transition-colors font-medium text-sm lg:text-base">
+              <a href="#contact" className="text-white hover:text-[#ffcc4f] transition-colors font-medium text-sm lg:text-base">
                 Contact
               </a>
             </nav>
@@ -171,7 +171,7 @@ export const Home = () => {
               <Button 
                 onClick={handleCall} 
                 size="sm" 
-                className="bg-[#F4A531] hover:bg-[#E09520] text-[#0e4b4c] font-semibold text-sm"
+                className="bg-[#ffcc4f] hover:bg-[#F4A531] text-[#0e4b4c] font-semibold text-sm"
               >
                 <Phone className="h-4 w-4 mr-2" />
                 <span>Bel Mij</span>
@@ -208,7 +208,7 @@ export const Home = () => {
               <Button 
                 onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}
                 size="lg" 
-                className="bg-[#F4A531] hover:bg-[#E09520] text-[#0e4b4c] font-semibold text-base md:text-lg px-6 md:px-8 py-5 md:py-6 w-full sm:w-auto"
+                className="bg-[#ffcc4f] hover:bg-[#F4A531] text-[#0e4b4c] font-semibold text-base md:text-lg px-6 md:px-8 py-5 md:py-6 w-full sm:w-auto"
               >
                 Maak een Afspraak
               </Button>
