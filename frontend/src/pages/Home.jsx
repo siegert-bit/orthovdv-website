@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Phone, Mail, MapPin, Award, Clock, Shield, Menu, X } from 'lucide-react';
+import { Phone, Mail, MapPin, Award, Clock, Shield } from 'lucide-react';
 import { WhatsAppLogo } from '../components/WhatsAppLogo';
 import { Button } from '../components/ui/button';
 import { Input } from '../components/ui/input';
@@ -21,7 +21,6 @@ export const Home = () => {
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -64,99 +63,50 @@ export const Home = () => {
     <div className="min-h-screen bg-white">
       {/* Vaste navigatiebalk bovenaan (boven logo in de layout); blijft zichtbaar bij scrollen */}
       <header className="fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-[#0e4b4c]/95 shadow-sm backdrop-blur-md">
-        <div className="container relative mx-auto px-4">
-          <div className="hidden md:flex flex-row flex-wrap items-center justify-center gap-6 py-2.5 lg:gap-8 lg:py-3">
-            <nav className="flex items-center gap-6 lg:gap-8" aria-label="Hoofdnavigatie">
-              <a href="#diensten" className="text-white transition-colors hover:text-[#ffcc4f] font-medium text-sm lg:text-base">
+        <div className="container relative mx-auto max-w-full px-2 sm:px-4">
+          <div className="flex flex-col items-center gap-2 py-2 md:flex-row md:flex-wrap md:justify-center md:gap-6 md:py-2.5 lg:gap-8 lg:py-3">
+            <nav
+              className="flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-xs font-medium sm:gap-x-3 sm:text-sm md:gap-6 lg:text-base"
+              aria-label="Hoofdnavigatie"
+            >
+              <a href="#diensten" className="text-white transition-colors hover:text-[#ffcc4f]">
                 Diensten
               </a>
-              <a href="#over" className="text-white transition-colors hover:text-[#ffcc4f] font-medium text-sm lg:text-base">
+              <a href="#over" className="text-white transition-colors hover:text-[#ffcc4f]">
                 Over Mij
               </a>
-              <a href="#werkwijze" className="text-white transition-colors hover:text-[#ffcc4f] font-medium text-sm lg:text-base">
+              <a href="#werkwijze" className="text-white transition-colors hover:text-[#ffcc4f]">
                 Werkwijze
               </a>
-              <a href="#contact" className="text-white transition-colors hover:text-[#ffcc4f] font-medium text-sm lg:text-base">
+              <a href="#contact" className="text-white transition-colors hover:text-[#ffcc4f]">
                 Contact
               </a>
             </nav>
-            <div className="flex items-center gap-2 lg:gap-3">
+            <div className="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 md:gap-3">
               <Button
                 onClick={handleWhatsApp}
                 size="sm"
                 variant="outline"
-                className="border-2 border-white text-white backdrop-blur-sm hover:bg-white/20 text-sm"
+                className="border-2 border-white text-white backdrop-blur-sm hover:bg-white/20 text-xs sm:text-sm"
               >
-                <WhatsAppLogo className="mr-2 h-4 w-4 shrink-0" />
+                <WhatsAppLogo className="mr-1 h-3.5 w-3.5 shrink-0 sm:mr-2 sm:h-4 sm:w-4" />
                 <span>WhatsApp</span>
               </Button>
               <Button
                 onClick={handleCall}
                 size="sm"
-                className="bg-[#ffcc4f] font-semibold text-sm text-[#0e4b4c] hover:bg-[#fdcc55]"
+                className="bg-[#ffcc4f] text-xs font-semibold text-[#0e4b4c] hover:bg-[#fdcc55] sm:text-sm"
               >
-                <Phone className="mr-2 h-4 w-4" />
+                <Phone className="mr-1 h-3.5 w-3.5 sm:mr-2 sm:h-4 sm:w-4" />
                 <span>Bel Mij</span>
               </Button>
             </div>
           </div>
-
-          <div className="flex items-center justify-end py-2 md:hidden">
-            <button
-              type="button"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="rounded-lg p-2 text-white transition-colors hover:bg-white/10"
-              aria-expanded={mobileMenuOpen}
-              aria-controls="mobile-main-nav"
-              aria-label="Menu"
-            >
-              {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-            </button>
-          </div>
-
-          {mobileMenuOpen && (
-            <nav
-              id="mobile-main-nav"
-              className="absolute left-0 right-0 top-full z-40 border-b border-white/10 bg-[#0e4b4c]/98 py-3 shadow-lg backdrop-blur-lg md:hidden"
-              aria-label="Hoofdnavigatie"
-            >
-              <div className="flex flex-col gap-1 px-4">
-                <a
-                  href="#diensten"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="py-2 text-center font-medium text-white transition-colors hover:text-[#ffcc4f]"
-                >
-                  Diensten
-                </a>
-                <a
-                  href="#over"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="py-2 text-center font-medium text-white transition-colors hover:text-[#ffcc4f]"
-                >
-                  Over Mij
-                </a>
-                <a
-                  href="#werkwijze"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="py-2 text-center font-medium text-white transition-colors hover:text-[#ffcc4f]"
-                >
-                  Werkwijze
-                </a>
-                <a
-                  href="#contact"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="py-2 text-center font-medium text-white transition-colors hover:text-[#ffcc4f]"
-                >
-                  Contact
-                </a>
-              </div>
-            </nav>
-          )}
         </div>
       </header>
 
       {/* Hero: ruimte voor vaste header, daarna logo */}
-      <section className="relative overflow-hidden bg-[#0e4b4c] pb-16 text-white md:pb-24 lg:pb-32 pt-[3.25rem] md:pt-[3.75rem]">
+      <section className="relative overflow-hidden bg-[#0e4b4c] pb-16 pt-28 text-white md:pb-24 md:pt-[3.75rem] lg:pb-32">
         <div className="absolute inset-0">
           <img
             src="/images/hero-background.jpg"
