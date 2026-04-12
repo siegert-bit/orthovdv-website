@@ -631,6 +631,37 @@ export const Home = () => {
           </div>
         </div>
       </footer>
+
+      {/* Vaste snelkoppelingen rechtsonder: mailto / tel / WhatsApp */}
+      <div
+        className="fixed bottom-4 right-4 z-[60] flex flex-col gap-2"
+        role="navigation"
+        aria-label="Snel contact"
+      >
+        <a
+          href={`mailto:${contactInfo.email}`}
+          className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-teal-700 bg-white text-teal-700 shadow-lg transition hover:bg-teal-50 hover:scale-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-700"
+          aria-label={`E-mail sturen naar ${contactInfo.email}`}
+        >
+          <Mail className="h-5 w-5" aria-hidden />
+        </a>
+        <a
+          href={`tel:${contactInfo.phone}`}
+          className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-teal-700 bg-[#ffcc4f] text-[#0e4b4c] shadow-lg transition hover:bg-[#fdcc55] hover:scale-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-700"
+          aria-label="Bellen"
+        >
+          <Phone className="h-5 w-5" aria-hidden />
+        </a>
+        <a
+          href={`https://wa.me/${contactInfo.whatsapp.replace(/\D/g, '')}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-teal-700 bg-white text-teal-700 shadow-lg transition hover:bg-teal-50 hover:scale-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-700"
+          aria-label="WhatsApp openen"
+        >
+          <MessageCircle className="h-5 w-5" aria-hidden />
+        </a>
+      </div>
     </div>
   );
 };
