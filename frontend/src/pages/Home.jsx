@@ -63,7 +63,7 @@ export const Home = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Header - Stacked Center Layout with Transparency & Mobile Hamburger */}
-      <header className="absolute top-0 left-0 right-0 z-50 bg-transparent">
+      <header className="fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-[#0e4b4c]/95 shadow-sm backdrop-blur-md">
         <div className="container mx-auto px-4 py-4 md:py-6">
           {/* Logo - Centered and Large, Full Width */}
           <div className="flex justify-center mb-3 md:mb-4 px-4">

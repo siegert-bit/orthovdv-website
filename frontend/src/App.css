@@ -1,6 +1,13 @@
-/* Smooth scrolling */
+/* Smooth scrolling; offset for fixed site header when using #anchors */
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 15rem;
+}
+
+@media (min-width: 768px) {
+    html {
+        scroll-padding-top: 12rem;
+    }
 }
 
 /* Hide Emergent watermark */
