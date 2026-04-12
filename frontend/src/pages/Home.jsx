@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Phone, Mail, MapPin, Award, Clock, Shield, Menu, X } from 'lucide-react';
+import { Phone, Mail, MapPin, Award, Clock, Shield, Menu, X, Shoe, Layers, Footprints } from 'lucide-react';
 import { WhatsAppLogo } from '../components/WhatsAppLogo';
 import { Button } from '../components/ui/button';
 import { Input } from '../components/ui/input';
@@ -62,8 +62,8 @@ export const Home = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Sticky i.p.v. fixed: fixed + backdrop-blur knipt op veel mobiele browsers de balk bij scrollen */}
-      <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-[#0e4b4c] shadow-sm md:bg-[#0e4b4c]/95 md:backdrop-blur-md">
+      {/* Vaste navigatiebalk bovenaan (boven logo in de layout); blijft zichtbaar bij scrollen */}
+      <header className="fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-[#0e4b4c]/95 shadow-sm backdrop-blur-md">
         <div className="container relative mx-auto px-4">
           <div className="hidden md:flex flex-row flex-wrap items-center justify-center gap-6 py-2.5 lg:gap-8 lg:py-3">
             <nav className="flex items-center gap-6 lg:gap-8" aria-label="Hoofdnavigatie">
@@ -156,8 +156,8 @@ export const Home = () => {
         </nav>
       )}
 
-      {/* Hero: header staat in de flow (sticky), geen extra pt meer voor overlappende fixed header */}
-      <section className="relative overflow-hidden bg-[#0e4b4c] pb-16 text-white md:pb-24 lg:pb-32 pt-0">
+      {/* Hero: ruimte voor vaste header, daarna logo */}
+      <section className="relative overflow-hidden bg-[#0e4b4c] pb-16 text-white md:pb-24 lg:pb-32 pt-[3.25rem] md:pt-[3.75rem]">
         <div className="absolute inset-0">
           <img
             src="/images/hero-background.jpg"
@@ -315,9 +315,9 @@ export const Home = () => {
               <Card key={service.id} className="border-2 hover:border-[#3bae75] hover:shadow-xl transition-all duration-300 group">
                 <CardHeader>
                   <div className="w-14 h-14 bg-[#3bae75]/20 rounded-xl flex items-center justify-center mb-4 group-hover:bg-[#0e4b4c] transition-colors">
-                    {service.icon === 'shoe' && <Award className="h-7 w-7 text-[#0e4b4c] group-hover:text-white transition-colors" />}
-                    {service.icon === 'footprints' && <Shield className="h-7 w-7 text-[#0e4b4c] group-hover:text-white transition-colors" />}
-                    {service.icon === 'search' && <Clock className="h-7 w-7 text-[#0e4b4c] group-hover:text-white transition-colors" />}
+                    {service.icon === 'shoe' && <Shoe className="h-7 w-7 text-[#0e4b4c] group-hover:text-white transition-colors" />}
+                    {service.icon === 'layers' && <Layers className="h-7 w-7 text-[#0e4b4c] group-hover:text-white transition-colors" />}
+                    {service.icon === 'footprints' && <Footprints className="h-7 w-7 text-[#0e4b4c] group-hover:text-white transition-colors" />}
                   </div>
                   <CardTitle className="text-xl">{service.title}</CardTitle>
                 </CardHeader>

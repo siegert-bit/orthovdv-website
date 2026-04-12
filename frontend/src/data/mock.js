@@ -22,14 +22,14 @@ export const services = [
     id: 2,
     title: "Orthopedische Steunzolen",
     description: "Op maat gemaakte steunzolen die perfect aansluiten bij uw voetanatomie. Corrigeren van looppatroon, drukverlichting en optimaal comfort. Service vindt plaats in de praktijk.",
-    icon: "footprints",
+    icon: "layers",
     homeService: false
   },
   {
     id: 3,
     title: "Professionele Voetanalyse",
     description: "Uitgebreide analyse van uw voeten, looppatroon en specifieke behoeften. Dit vormt de basis voor uw perfecte maatwerk schoenen of steunzolen.",
-    icon: "search",
+    icon: "footprints",
     homeService: true
   }
 ];
