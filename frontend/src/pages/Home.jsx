@@ -62,139 +62,142 @@ export const Home = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Header - Stacked Center Layout with Transparency & Mobile Hamburger */}
-      <header className="absolute top-0 left-0 right-0 z-50 bg-transparent">
-        <div className="container mx-auto px-4 py-4 md:py-6">
-          {/* Logo - Centered and Large, Full Width */}
-          <div className="flex justify-center mb-3 md:mb-4 px-4">
-            <img 
-              src="/images/logo-banner.png"
-              alt="Van de Voorde Orthopedie"
-              className="h-auto w-full max-w-[260px] md:max-w-[350px] lg:max-w-[420px] object-contain"
-            />
-          </div>
-          
-          {/* Mobile: Buttons Row + Hamburger */}
-          <div className="md:hidden flex flex-col items-center gap-2">
-            <div className="flex items-center justify-center gap-3 w-full px-4">
-              <Button 
-                onClick={handleWhatsApp} 
-                size="sm" 
-                variant="outline" 
-                className="flex-1 max-w-[160px] border-2 border-white text-white hover:bg-white/20 backdrop-blur-sm"
+      {/* Vaste navigatiebalk bovenaan (boven logo in de layout); blijft zichtbaar bij scrollen */}
+      <header className="fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-[#0e4b4c]/95 shadow-sm backdrop-blur-md">
+        <div className="container relative mx-auto px-4">
+          <div className="hidden md:flex flex-row flex-wrap items-center justify-center gap-6 py-2.5 lg:gap-8 lg:py-3">
+            <nav className="flex items-center gap-6 lg:gap-8" aria-label="Hoofdnavigatie">
+              <a href="#diensten" className="text-white transition-colors hover:text-[#ffcc4f] font-medium text-sm lg:text-base">
+                Diensten
+              </a>
+              <a href="#over" className="text-white transition-colors hover:text-[#ffcc4f] font-medium text-sm lg:text-base">
+                Over Mij
+              </a>
+              <a href="#werkwijze" className="text-white transition-colors hover:text-[#ffcc4f] font-medium text-sm lg:text-base">
+                Werkwijze
+              </a>
+              <a href="#contact" className="text-white transition-colors hover:text-[#ffcc4f] font-medium text-sm lg:text-base">
+                Contact
+              </a>
+            </nav>
+            <div className="flex items-center gap-2 lg:gap-3">
+              <Button
+                onClick={handleWhatsApp}
+                size="sm"
+                variant="outline"
+                className="border-2 border-white text-white backdrop-blur-sm hover:bg-white/20 text-sm"
               >
-                <WhatsAppLogo className="h-4 w-4 mr-2 shrink-0" />
+                <WhatsAppLogo className="mr-2 h-4 w-4 shrink-0" />
                 <span>WhatsApp</span>
               </Button>
-              <Button 
-                onClick={handleCall} 
-                size="sm" 
-                className="flex-1 max-w-[160px] bg-[#ffcc4f] hover:bg-[#fdcc55] text-[#0e4b4c] font-semibold"
+              <Button
+                onClick={handleCall}
+                size="sm"
+                className="bg-[#ffcc4f] font-semibold text-sm text-[#0e4b4c] hover:bg-[#fdcc55]"
               >
-                <Phone className="h-4 w-4 mr-2" />
+                <Phone className="mr-2 h-4 w-4" />
                 <span>Bel Mij</span>
               </Button>
             </div>
-            
-            {/* Hamburger Menu Button */}
+          </div>
+
+          <div className="flex items-center justify-end py-2 md:hidden">
             <button
+              type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="text-white p-2 hover:bg-white/10 rounded-lg transition-colors"
+              className="rounded-lg p-2 text-white transition-colors hover:bg-white/10"
+              aria-expanded={mobileMenuOpen}
+              aria-controls="mobile-main-nav"
               aria-label="Menu"
             >
               {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
           </div>
 
-          {/* Mobile Menu Dropdown */}
           {mobileMenuOpen && (
-            <div className="md:hidden bg-[#0e4b4c]/95 backdrop-blur-lg rounded-lg p-4 mt-2">
-              <nav className="flex flex-col gap-3">
-                <a 
-                  href="#diensten" 
+            <nav
+              id="mobile-main-nav"
+              className="absolute left-0 right-0 top-full z-40 border-b border-white/10 bg-[#0e4b4c]/98 py-3 shadow-lg backdrop-blur-lg md:hidden"
+              aria-label="Hoofdnavigatie"
+            >
+              <div className="flex flex-col gap-1 px-4">
+                <a
+                  href="#diensten"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="text-white hover:text-[#ffcc4f] transition-colors font-medium text-center py-2"
+                  className="py-2 text-center font-medium text-white transition-colors hover:text-[#ffcc4f]"
                 >
                   Diensten
                 </a>
-                <a 
-                  href="#over" 
+                <a
+                  href="#over"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="text-white hover:text-[#ffcc4f] transition-colors font-medium text-center py-2"
+                  className="py-2 text-center font-medium text-white transition-colors hover:text-[#ffcc4f]"
                 >
                   Over Mij
                 </a>
-                <a 
-                  href="#werkwijze" 
+                <a
+                  href="#werkwijze"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="text-white hover:text-[#ffcc4f] transition-colors font-medium text-center py-2"
+                  className="py-2 text-center font-medium text-white transition-colors hover:text-[#ffcc4f]"
                 >
                   Werkwijze
                 </a>
-                <a 
-                  href="#contact" 
+                <a
+                  href="#contact"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="text-white hover:text-[#ffcc4f] transition-colors font-medium text-center py-2"
+                  className="py-2 text-center font-medium text-white transition-colors hover:text-[#ffcc4f]"
                 >
                   Contact
                 </a>
-              </nav>
-            </div>
-          )}
-          
-          {/* Desktop: Navigation and Buttons - Centered Row */}
-          <div className="hidden md:flex flex-row items-center justify-center gap-6 lg:gap-8 mt-3">
-            <nav className="flex items-center gap-6 lg:gap-8">
-              <a href="#diensten" className="text-white hover:text-[#ffcc4f] transition-colors font-medium text-sm lg:text-base">
-                Diensten
-              </a>
-              <a href="#over" className="text-white hover:text-[#ffcc4f] transition-colors font-medium text-sm lg:text-base">
-                Over Mij
-              </a>
-              <a href="#werkwijze" className="text-white hover:text-[#ffcc4f] transition-colors font-medium text-sm lg:text-base">
-                Werkwijze
-              </a>
-              <a href="#contact" className="text-white hover:text-[#ffcc4f] transition-colors font-medium text-sm lg:text-base">
-                Contact
-              </a>
+              </div>
             </nav>
-            
-            <div className="flex items-center gap-2 lg:gap-3">
-              <Button 
-                onClick={handleWhatsApp} 
-                size="sm" 
-                variant="outline" 
-                className="border-2 border-white text-white hover:bg-white/20 backdrop-blur-sm text-sm"
+          )}
+        </div>
+      </header>
+
+      {/* Hero: ruimte voor vaste header, daarna logo */}
+      <section className="relative overflow-hidden bg-[#0e4b4c] pb-16 text-white md:pb-24 lg:pb-32 pt-[3.25rem] md:pt-[3.75rem]">
+        <div className="absolute inset-0">
+          <img
+            src="/images/hero-background.jpg"
+            alt="Van de Voorde Orthopedie Banner"
+            className="h-full w-full object-cover opacity-20"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0e4b4c]/95 via-[#0e4b4c]/90 to-[#0e4b4c]/80" />
+        </div>
+
+        <div className="relative z-10 container mx-auto px-4 pb-4 pt-4 md:pb-6 md:pt-6">
+          <div className="mb-3 flex justify-center px-4 md:mb-4">
+            <img
+              src="/images/logo-banner.png"
+              alt="Van de Voorde Orthopedie"
+              className="h-auto w-full max-w-[260px] object-contain md:max-w-[350px] lg:max-w-[420px]"
+            />
+          </div>
+          <div className="flex w-full flex-col items-center gap-2 md:hidden">
+            <div className="flex w-full max-w-md items-center justify-center gap-3 px-4">
+              <Button
+                onClick={handleWhatsApp}
+                size="sm"
+                variant="outline"
+                className="max-w-[160px] flex-1 border-2 border-white text-white backdrop-blur-sm hover:bg-white/20"
               >
-                <WhatsAppLogo className="h-4 w-4 mr-2 shrink-0" />
+                <WhatsAppLogo className="mr-2 h-4 w-4 shrink-0" />
                 <span>WhatsApp</span>
               </Button>
-              <Button 
-                onClick={handleCall} 
-                size="sm" 
-                className="bg-[#ffcc4f] hover:bg-[#fdcc55] text-[#0e4b4c] font-semibold text-sm"
+              <Button
+                onClick={handleCall}
+                size="sm"
+                className="max-w-[160px] flex-1 bg-[#ffcc4f] font-semibold text-[#0e4b4c] hover:bg-[#fdcc55]"
               >
-                <Phone className="h-4 w-4 mr-2" />
+                <Phone className="mr-2 h-4 w-4" />
                 <span>Bel Mij</span>
               </Button>
             </div>
           </div>
         </div>
-      </header>
 
-      {/* Hero Section with Full-Width Banner */}
-      <section className="relative bg-[#0e4b4c] text-white overflow-hidden pt-72 md:pt-80 lg:pt-96 pb-16 md:pb-24 lg:pb-32">
-        {/* Full-width Banner Background */}
-        <div className="absolute inset-0">
-          <img 
-            src="/images/hero-background.jpg"
-            alt="Van de Voorde Orthopedie Banner"
-            className="w-full h-full object-cover opacity-20"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0e4b4c]/95 via-[#0e4b4c]/90 to-[#0e4b4c]/80"></div>
-        </div>
-        
-        <div className="container mx-auto px-4 relative z-10">
+        <div className="container relative z-10 mx-auto px-4 pt-6 md:pt-10">
           <div className="max-w-4xl mx-auto text-center">
             <div className="inline-block px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-sm font-medium mb-4 md:mb-6">
               ✓ Exclusieve Service aan Huis door heel België
