@@ -647,7 +647,7 @@ export const Home = () => {
         </a>
         <a
           href={`tel:${contactInfo.phone}`}
-          className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-teal-700 bg-[#ffcc4f] text-[#0e4b4c] shadow-lg transition hover:bg-[#fdcc55] hover:scale-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-700"
+          className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-teal-700 bg-[#ffcc4f] text-[#0e4b4c] shadow-lg transition hover:bg-[#fdcc55] hover:scale-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-700 md:hidden"
           aria-label="Bellen"
         >
           <Phone className="h-5 w-5" aria-hidden />
