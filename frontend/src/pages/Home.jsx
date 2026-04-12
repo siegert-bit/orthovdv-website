@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import { Phone, Mail, MapPin, Award, Clock, Shield, Menu, X, Shoe, Layers, Footprints } from 'lucide-react';
+import { Phone, Mail, MapPin, Award, Clock, Shield, Menu, X } from 'lucide-react';
 import { WhatsAppLogo } from '../components/WhatsAppLogo';
+import { ServiceIcon } from '../components/ServiceIcon';
 import { Button } from '../components/ui/button';
 import { Input } from '../components/ui/input';
 import { Textarea } from '../components/ui/textarea';
@@ -315,9 +316,10 @@ export const Home = () => {
               <Card key={service.id} className="border-2 hover:border-[#3bae75] hover:shadow-xl transition-all duration-300 group">
                 <CardHeader>
                   <div className="w-14 h-14 bg-[#3bae75]/20 rounded-xl flex items-center justify-center mb-4 group-hover:bg-[#0e4b4c] transition-colors">
-                    {service.icon === 'shoe' && <Shoe className="h-7 w-7 text-[#0e4b4c] group-hover:text-white transition-colors" />}
-                    {service.icon === 'layers' && <Layers className="h-7 w-7 text-[#0e4b4c] group-hover:text-white transition-colors" />}
-                    {service.icon === 'footprints' && <Footprints className="h-7 w-7 text-[#0e4b4c] group-hover:text-white transition-colors" />}
+                    <ServiceIcon
+                      name={service.icon}
+                      className="h-7 w-7 text-[#0e4b4c] transition-colors group-hover:text-white"
+                    />
                   </div>
                   <CardTitle className="text-xl">{service.title}</CardTitle>
                 </CardHeader>
