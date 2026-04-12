@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { Phone, Mail, MessageCircle, MapPin, Award, Clock, Shield, Menu, X } from 'lucide-react';
+import { Phone, Mail, MapPin, Award, Clock, Shield, Menu, X } from 'lucide-react';
+import { WhatsAppLogo } from '../components/WhatsAppLogo';
 import { Button } from '../components/ui/button';
 import { Input } from '../components/ui/input';
 import { Textarea } from '../components/ui/textarea';
@@ -82,7 +83,7 @@ export const Home = () => {
                 variant="outline" 
                 className="flex-1 max-w-[160px] border-2 border-white text-white hover:bg-white/20 backdrop-blur-sm"
               >
-                <MessageCircle className="h-4 w-4 mr-2" />
+                <WhatsAppLogo className="h-4 w-4 mr-2 shrink-0" />
                 <span>WhatsApp</span>
               </Button>
               <Button 
@@ -165,7 +166,7 @@ export const Home = () => {
                 variant="outline" 
                 className="border-2 border-white text-white hover:bg-white/20 backdrop-blur-sm text-sm"
               >
-                <MessageCircle className="h-4 w-4 mr-2" />
+                <WhatsAppLogo className="h-4 w-4 mr-2 shrink-0" />
                 <span>WhatsApp</span>
               </Button>
               <Button 
@@ -218,7 +219,7 @@ export const Home = () => {
                 variant="outline" 
                 className="border-2 border-white text-white hover:bg-white/10 font-semibold text-base md:text-lg px-6 md:px-8 py-5 md:py-6 w-full sm:w-auto"
               >
-                <MessageCircle className="mr-2 h-5 w-5" />
+                <WhatsAppLogo className="mr-2 h-5 w-5 shrink-0" />
                 WhatsApp Mij
               </Button>
             </div>
@@ -550,7 +551,7 @@ export const Home = () => {
                       variant="outline"
                       className="w-full justify-start text-left h-auto py-4 border-2 hover:border-teal-700 hover:bg-teal-50"
                     >
-                      <MessageCircle className="mr-3 h-5 w-5 text-teal-700" />
+                      <WhatsAppLogo className="mr-3 h-5 w-5 shrink-0" />
                       <div>
                         <div className="font-semibold text-gray-900">WhatsApp</div>
                         <div className="text-sm text-gray-600">Stuur mij een bericht</div>
@@ -659,7 +660,7 @@ export const Home = () => {
           className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-teal-700 bg-white text-teal-700 shadow-lg transition hover:bg-teal-50 hover:scale-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-700"
           aria-label="WhatsApp openen"
         >
-          <MessageCircle className="h-5 w-5" aria-hidden />
+          <WhatsAppLogo className="h-5 w-5 shrink-0" aria-hidden />
         </a>
       </div>
     </div>
