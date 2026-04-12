@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { Phone, Mail, MapPin, Award, Clock, Shield, Menu, X } from 'lucide-react';
 import { WhatsAppLogo } from '../components/WhatsAppLogo';
 import { ServiceIcon } from '../components/ServiceIcon';
+import { PiHouseBold } from 'react-icons/pi';
+import { FaHandsHelping } from 'react-icons/fa';
 import { Button } from '../components/ui/button';
 import { Input } from '../components/ui/input';
 import { Textarea } from '../components/ui/textarea';
@@ -370,7 +372,7 @@ export const Home = () => {
                 </div>
                 <div className="flex gap-4">
                   <div className="flex-shrink-0 w-12 h-12 bg-[#0e4b4c] rounded-lg flex items-center justify-center">
-                    <Clock className="h-6 w-6 text-white" />
+                    <PiHouseBold className="h-6 w-6 text-white" aria-hidden />
                   </div>
                   <div>
                     <h3 className="text-xl font-semibold text-gray-900 mb-2">Uw Comfort Voorop</h3>
@@ -379,7 +381,7 @@ export const Home = () => {
                 </div>
                 <div className="flex gap-4">
                   <div className="flex-shrink-0 w-12 h-12 bg-[#0e4b4c] rounded-lg flex items-center justify-center">
-                    <Award className="h-6 w-6 text-white" />
+                    <FaHandsHelping className="h-6 w-6 text-white" aria-hidden />
                   </div>
                   <div>
                     <h3 className="text-xl font-semibold text-gray-900 mb-2">Persoonlijke Aandacht</h3>
