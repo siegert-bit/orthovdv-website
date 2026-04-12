@@ -101,7 +101,7 @@ export const Home = () => {
             </div>
           </div>
 
-          <div className="flex items-center justify-end py-2 md:hidden">
+          <div className="flex items-center justify-start py-2 md:hidden">
             <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -117,35 +117,35 @@ export const Home = () => {
           {mobileMenuOpen && (
             <nav
               id="mobile-main-nav"
-              className="absolute left-0 right-0 top-full z-40 border-b border-white/10 bg-[#0e4b4c]/98 py-3 shadow-lg backdrop-blur-lg md:hidden"
+              className="fixed inset-x-0 bottom-0 top-[3.25rem] z-[70] flex flex-col overflow-y-auto border-t border-white/10 bg-[#0e4b4c] py-6 shadow-xl md:hidden"
               aria-label="Hoofdnavigatie"
             >
-              <div className="flex flex-col gap-1 px-4">
+              <div className="container mx-auto flex flex-col gap-1 px-4">
                 <a
                   href="#diensten"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="py-2 text-center font-medium text-white transition-colors hover:text-[#ffcc4f]"
+                  className="rounded-lg py-3 text-center text-base font-medium text-white transition-colors hover:bg-white/10 hover:text-[#ffcc4f]"
                 >
                   Diensten
                 </a>
                 <a
                   href="#over"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="py-2 text-center font-medium text-white transition-colors hover:text-[#ffcc4f]"
+                  className="rounded-lg py-3 text-center text-base font-medium text-white transition-colors hover:bg-white/10 hover:text-[#ffcc4f]"
                 >
                   Over Mij
                 </a>
                 <a
                   href="#werkwijze"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="py-2 text-center font-medium text-white transition-colors hover:text-[#ffcc4f]"
+                  className="rounded-lg py-3 text-center text-base font-medium text-white transition-colors hover:bg-white/10 hover:text-[#ffcc4f]"
                 >
                   Werkwijze
                 </a>
                 <a
                   href="#contact"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="py-2 text-center font-medium text-white transition-colors hover:text-[#ffcc4f]"
+                  className="rounded-lg py-3 text-center text-base font-medium text-white transition-colors hover:bg-white/10 hover:text-[#ffcc4f]"
                 >
                   Contact
                 </a>
