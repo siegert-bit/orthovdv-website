@@ -113,47 +113,48 @@ export const Home = () => {
               {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
           </div>
-
-          {mobileMenuOpen && (
-            <nav
-              id="mobile-main-nav"
-              className="fixed inset-x-0 bottom-0 top-[3.25rem] z-[70] flex flex-col overflow-y-auto border-t border-white/10 bg-[#0e4b4c] py-6 shadow-xl md:hidden"
-              aria-label="Hoofdnavigatie"
-            >
-              <div className="container mx-auto flex flex-col gap-1 px-4">
-                <a
-                  href="#diensten"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="rounded-lg py-3 text-center text-base font-medium text-white transition-colors hover:bg-white/10 hover:text-[#ffcc4f]"
-                >
-                  Diensten
-                </a>
-                <a
-                  href="#over"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="rounded-lg py-3 text-center text-base font-medium text-white transition-colors hover:bg-white/10 hover:text-[#ffcc4f]"
-                >
-                  Over Mij
-                </a>
-                <a
-                  href="#werkwijze"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="rounded-lg py-3 text-center text-base font-medium text-white transition-colors hover:bg-white/10 hover:text-[#ffcc4f]"
-                >
-                  Werkwijze
-                </a>
-                <a
-                  href="#contact"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="rounded-lg py-3 text-center text-base font-medium text-white transition-colors hover:bg-white/10 hover:text-[#ffcc4f]"
-                >
-                  Contact
-                </a>
-              </div>
-            </nav>
-          )}
         </div>
       </header>
+
+      {/* Buiten header: fixed werkt over volledige viewport (header met backdrop-blur knipt anders het menu) */}
+      {mobileMenuOpen && (
+        <nav
+          id="mobile-main-nav"
+          className="fixed inset-x-0 bottom-0 top-[3.25rem] z-[70] flex flex-col overflow-y-auto border-t border-white/10 bg-[#0e4b4c] py-8 shadow-xl md:hidden"
+          aria-label="Hoofdnavigatie"
+        >
+          <div className="container mx-auto flex flex-col gap-2 px-4">
+            <a
+              href="#diensten"
+              onClick={() => setMobileMenuOpen(false)}
+              className="rounded-lg py-4 text-center text-lg font-medium text-white transition-colors hover:bg-white/10 hover:text-[#ffcc4f]"
+            >
+              Diensten
+            </a>
+            <a
+              href="#over"
+              onClick={() => setMobileMenuOpen(false)}
+              className="rounded-lg py-4 text-center text-lg font-medium text-white transition-colors hover:bg-white/10 hover:text-[#ffcc4f]"
+            >
+              Over Mij
+            </a>
+            <a
+              href="#werkwijze"
+              onClick={() => setMobileMenuOpen(false)}
+              className="rounded-lg py-4 text-center text-lg font-medium text-white transition-colors hover:bg-white/10 hover:text-[#ffcc4f]"
+            >
+              Werkwijze
+            </a>
+            <a
+              href="#contact"
+              onClick={() => setMobileMenuOpen(false)}
+              className="rounded-lg py-4 text-center text-lg font-medium text-white transition-colors hover:bg-white/10 hover:text-[#ffcc4f]"
+            >
+              Contact
+            </a>
+          </div>
+        </nav>
+      )}
 
       {/* Hero: ruimte voor vaste header, daarna logo */}
       <section className="relative overflow-hidden bg-[#0e4b4c] pb-16 text-white md:pb-24 lg:pb-32 pt-[3.25rem] md:pt-[3.75rem]">
