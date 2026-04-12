@@ -167,8 +167,8 @@ export const Home = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-[#0e4b4c]/95 via-[#0e4b4c]/90 to-[#0e4b4c]/80" />
         </div>
 
-        <div className="relative z-10 container mx-auto px-4 pb-4 pt-4 md:pb-6 md:pt-6">
-          <div className="mb-3 flex justify-center px-4 md:mb-4">
+        <div className="relative z-10 container mx-auto px-4 pb-4 pt-4 md:pb-2 md:pt-6">
+          <div className="mb-3 flex justify-center px-4 md:mb-2">
             <img
               src="/images/logo-banner.png"
               alt="Van de Voorde Orthopedie"
@@ -198,7 +198,7 @@ export const Home = () => {
           </div>
         </div>
 
-        <div className="container relative z-10 mx-auto px-4 pt-6 md:pt-10">
+        <div className="container relative z-10 mx-auto px-4 pt-6 md:pt-3">
           <div className="max-w-4xl mx-auto text-center">
             <div className="inline-block px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-sm font-medium mb-4 md:mb-6">
               ✓ Exclusieve Service aan Huis door heel België
