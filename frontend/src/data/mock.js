@@ -7,7 +7,7 @@ export const contactInfo = {
   whatsapp: "+32472917918",
   riziv: "101546-46 001",
   btw: "BE 1021.586.776",
-  address: "Antwerpsesteenweg 29 bus 7, 2500 Lier"
+  address: "Nijlensesteenweg 51, 2560 Bevel"
 };
 
 export const services = [
