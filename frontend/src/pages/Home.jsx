@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin, Award, Clock, Shield, Menu, X } from 'lucide-react';
 import { WhatsAppLogo } from '../components/WhatsAppLogo';
 import { ServiceIcon } from '../components/ServiceIcon';
@@ -25,6 +26,13 @@ export const Home = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  // De server van het formulier slaapt als hij een tijd niet gebruikt is.
+  // We wekken hem al bij het openen van de pagina, zodat versturen later vlot gaat.
+  useEffect(() => {
+    if (!BACKEND_URL) return;
+    fetch(`${API}/`, { mode: 'no-cors' }).catch(() => {});
+  }, []);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -78,6 +86,9 @@ export const Home = () => {
               </a>
               <a href="#werkwijze" className="text-white transition-colors hover:text-[#ffcc4f] font-medium text-sm lg:text-base">
                 Werkwijze
+              </a>
+              <a href="#tarieven" className="text-white transition-colors hover:text-[#ffcc4f] font-medium text-sm lg:text-base">
+                Tarieven
               </a>
               <a href="#contact" className="text-white transition-colors hover:text-[#ffcc4f] font-medium text-sm lg:text-base">
                 Contact
@@ -149,6 +160,13 @@ export const Home = () => {
               Werkwijze
             </a>
             <a
+              href="#tarieven"
+              onClick={() => setMobileMenuOpen(false)}
+              className="rounded-lg py-4 text-center text-lg font-medium text-white transition-colors hover:bg-white/10 hover:text-[#ffcc4f]"
+            >
+              Tarieven
+            </a>
+            <a
               href="#contact"
               onClick={() => setMobileMenuOpen(false)}
               className="rounded-lg py-4 text-center text-lg font-medium text-white transition-colors hover:bg-white/10 hover:text-[#ffcc4f]"
@@ -161,15 +179,6 @@ export const Home = () => {
 
       {/* Hero: ruimte voor vaste header, daarna logo */}
       <section className="relative overflow-hidden bg-[#0e4b4c] pb-16 text-white md:pb-24 lg:pb-32 pt-[3.25rem] md:pt-[3.75rem]">
-        <div className="absolute inset-0">
-          <img
-            src="/images/hero-background.jpg"
-            alt="Van de Voorde Orthopedie Banner"
-            className="h-full w-full object-cover opacity-20"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0e4b4c]/95 via-[#0e4b4c]/90 to-[#0e4b4c]/80" />
-        </div>
-
         <div className="relative z-10 container mx-auto px-4 pb-4 pt-4 md:pb-2 md:pt-6">
           <div className="mb-3 flex justify-center px-4 md:mb-2">
             <img
@@ -210,7 +219,7 @@ export const Home = () => {
               Maatwerk orthopedische schoenen & steunzolen
             </h1>
             <p className="text-base md:text-lg lg:text-xl text-white/90 mb-6 md:mb-8 max-w-3xl mx-auto">
-              Professionele schoentechniek voor uw voetgezondheid. Orthopedische schoenen aan huis, steunzolen in de praktijk.
+              Professionele schoentechniek voor uw voetgezondheid. Orthopedische schoenen aan huis in heel België, steunzolen aan huis in de regio Lier – Heist-op-den-Berg.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button 
@@ -277,7 +286,7 @@ export const Home = () => {
                   <div className="flex items-center gap-3">
                     <MapPin className="h-5 w-5 text-[#0e4b4c]" />
                     <div>
-                      <span className="font-medium text-gray-900">Praktijk:</span>
+                      <span className="font-medium text-gray-900">Zetel:</span>
                       <span className="ml-2 text-gray-700">{contactInfo.address}</span>
                     </div>
                   </div>
@@ -309,7 +318,7 @@ export const Home = () => {
               Orthopedische Schoenen & Steunzolen
             </h2>
             <p className="text-lg text-gray-600">
-              Maatwerk orthopedische schoenen aan huis en steunzolen in de praktijk. Professionele zorg afgestemd op uw behoeften.
+              Maatwerk orthopedische schoenen aan huis in heel België en steunzolen aan huis in mijn eigen regio. Professionele zorg afgestemd op uw behoeften.
             </p>
           </div>
           
@@ -444,6 +453,90 @@ export const Home = () => {
         </div>
       </section>
 
+      {/* Tarieven en terugbetaling */}
+      <section id="tarieven" className="py-20 bg-gradient-to-br from-[#3bae75]/10 to-[#0e4b4c]/5">
+        <div className="container mx-auto px-4">
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <div className="inline-block px-4 py-2 bg-[#0e4b4c] text-white rounded-full text-sm font-semibold mb-6">
+              Tarieven & Terugbetaling
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Wat kost het u?
+            </h2>
+            <p className="text-lg text-gray-600">
+              Met een voorschrift van een specialist en de goedkeuring van uw mutualiteit betaalt u voor orthopedische schoenen op maat alleen het remgeld.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <Card className="border-2 bg-white">
+              <CardHeader>
+                <CardTitle className="text-xl">Orthopedische schoenen op maat</CardTitle>
+                <CardDescription>Uw remgeld, per paar</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-3">
+                  <div className="flex items-baseline justify-between border-b border-gray-200 pb-3">
+                    <span className="text-gray-700">Categorie A</span>
+                    <span className="text-2xl font-bold text-[#0e4b4c]">€ 53,42</span>
+                  </div>
+                  <div className="flex items-baseline justify-between">
+                    <span className="text-gray-700">Categorie B</span>
+                    <span className="text-2xl font-bold text-[#0e4b4c]">€ 171,64</span>
+                  </div>
+                </div>
+                <p className="mt-4 text-sm text-gray-600">
+                  Welke categorie voor u geldt, hangt af van uw voorschrift. Ik bekijk dat samen met u en regel de aanvraag bij uw mutualiteit.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-2 bg-white">
+              <CardHeader>
+                <CardTitle className="text-xl">Steunzolen</CardTitle>
+                <CardDescription>Opmeting inbegrepen</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="flex items-baseline justify-between border-b border-gray-200 pb-3">
+                  <span className="text-gray-700">Terugbetaling mutualiteit</span>
+                  <span className="text-2xl font-bold text-[#0e4b4c]">€ 61,08</span>
+                </div>
+                <p className="mt-4 text-sm text-gray-600">
+                  Per paar, met een voorschrift van een specialist. Neem contact op voor de prijs van uw steunzolen.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="max-w-4xl mx-auto mt-8 rounded-xl border-2 border-gray-200 bg-white p-6">
+            <h3 className="text-xl font-semibold text-gray-900 mb-2">Wie mag voorschrijven?</h3>
+            <p className="text-gray-700 leading-relaxed">
+              Voor de terugbetaling van orthopedische schoenen én steunzolen hebt u een voorschrift nodig van een arts-specialist in een van deze disciplines:
+            </p>
+            <ul className="mt-4 grid gap-x-8 gap-y-2 text-gray-700 sm:grid-cols-2">
+              {[
+                'Orthopedische heelkunde',
+                'Heelkunde',
+                'Fysische geneeskunde en revalidatie',
+                'Reumatologie',
+                'Neurologie',
+                'Neurochirurgie',
+                'Neuropsychiatrie',
+                'Pediatrie (kinderarts)',
+              ].map((discipline) => (
+                <li key={discipline} className="flex items-start gap-2">
+                  <span className="mt-2 h-2 w-2 flex-shrink-0 rounded-full bg-[#3bae75]" />
+                  <span>{discipline}</span>
+                </li>
+              ))}
+            </ul>
+            <p className="mt-4 text-sm text-gray-600">
+              Een voorschrift van de huisarts volstaat niet, ook niet voor een hernieuwing. Twijfelt u of uw arts mag voorschrijven? Bel mij, ik kijk het voor u na.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Contact Section */}
       <section id="contact" className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
@@ -528,9 +621,10 @@ export const Home = () => {
                     >
                       {isSubmitting ? 'Verzenden...' : 'Verstuur Aanvraag'}
                     </Button>
-                    <p className="mt-4 text-[10px] text-gray-400 italic text-center leading-relaxed">
-  Opmerking: De eerste aanvraag kan tot 60 seconden duren terwijl onze beveiligde server opstart.
-</p>
+                    <p className="mt-4 text-xs text-gray-500 text-center leading-relaxed">
+                      Uw gegevens worden enkel gebruikt om uw aanvraag te beantwoorden. Lees de{' '}
+                      <Link to="/privacy" className="underline hover:text-[#0e4b4c]">privacyverklaring</Link>.
+                    </p>
                   </form>
                 </CardContent>
               </Card>
@@ -581,7 +675,7 @@ export const Home = () => {
 
                 <Card className="shadow-lg bg-teal-700 text-white">
                   <CardHeader>
-                    <CardTitle className="text-white">Praktijkadres</CardTitle>
+                    <CardTitle className="text-white">Maatschappelijke zetel</CardTitle>
                     <CardDescription className="text-teal-100">Voor correspondentie</CardDescription>
                   </CardHeader>
                   <CardContent>
@@ -590,7 +684,7 @@ export const Home = () => {
                       <div>
                         <p className="font-medium">{contactInfo.address}</p>
                         <p className="text-sm text-teal-100 mt-2">
-                          Let op: Dienstverlening vindt plaats bij u thuis
+                          Let op: geen winkel of praktijk. Ik kom bij u thuis.
                         </p>
                       </div>
                     </div>
@@ -630,6 +724,7 @@ export const Home = () => {
             <div>
               <h3 className="font-semibold text-white mb-4">Professionele Gegevens</h3>
               <div className="space-y-2 text-sm">
+                <p>{contactInfo.company}</p>
                 <p>RIZIV: {contactInfo.riziv}</p>
                 <p>BTW: {contactInfo.btw}</p>
               </div>
@@ -637,6 +732,9 @@ export const Home = () => {
           </div>
           <div className="border-t border-gray-800 mt-8 pt-8 text-center text-sm text-gray-400">
             <p>&copy; {new Date().getFullYear()} Orthopedie Van de Voorde. Alle rechten voorbehouden.</p>
+            <p className="mt-2">
+              <Link to="/privacy" className="underline hover:text-white">Privacyverklaring</Link>
+            </p>
           </div>
         </div>
       </footer>

@@ -162,8 +162,8 @@ def get_customer_confirmation_html(customer_name: str) -> str:
                             <td style="background-color: #f9f9f9; padding: 20px; text-align: center; border-top: 1px solid #e0e0e0;">
                                 <p style="margin: 0 0 10px 0; color: #1A4D4D; font-weight: bold;">Van de Voorde Orthopedie</p>
                                 <p style="margin: 0; color: #666666; font-size: 12px;">
-                                    Antwerpsesteenweg 29 bus 7, 2500 Lier<br>
-                                    RIZIV: 101546-46 001 | BTW: BE 1021.586.776
+                                    Oude Molen 10, 2580 Putte<br>
+                                    Ortho VdV BV | RIZIV: 101546-46 001 | BTW: BE 1042.212.837
                                 </p>
                             </td>
                         </tr>

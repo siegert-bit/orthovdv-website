@@ -2,12 +2,13 @@
 
 export const contactInfo = {
   name: "Siegert Van de Voorde",
-  email: "siegert@orthovdv.be",
+  email: "info@orthovdv.be",
   phone: "+32472917918",
   whatsapp: "+32472917918",
   riziv: "101546-46 001",
-  btw: "BE 1021.586.776",
-  address: "Nijlensesteenweg 51, 2560 Bevel"
+  company: "Ortho VdV BV",
+  btw: "BE 1042.212.837",
+  address: "Oude Molen 10, 2580 Putte"
 };
 
 export const services = [
@@ -21,7 +22,7 @@ export const services = [
   {
     id: 2,
     title: "Orthopedische Steunzolen",
-    description: "Op maat gemaakte steunzolen die perfect aansluiten bij uw voetanatomie. Corrigeren van looppatroon, drukverlichting en optimaal comfort. Service vindt plaats in de praktijk.",
+    description: "Op maat gemaakte steunzolen die perfect aansluiten bij uw voetanatomie. Corrigeren van looppatroon, drukverlichting en optimaal comfort. Ik kom aan huis in de regio Lier, Nijlen, Berlaar, Putte, Heist-op-den-Berg en Herenthout.",
     icon: "layers",
     homeService: false
   },
