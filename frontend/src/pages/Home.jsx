@@ -3,8 +3,6 @@ import { Link, useLocation } from 'react-router-dom';
 import { Phone, Mail, MapPin, Award, Clock, Shield, Menu, X, ArrowRight } from 'lucide-react';
 import { WhatsAppLogo } from '../components/WhatsAppLogo';
 import { ServiceIcon } from '../components/ServiceIcon';
-import { PiHouseBold } from 'react-icons/pi';
-import { FaHandsHelping } from 'react-icons/fa';
 import { Button } from '../components/ui/button';
 import { Input } from '../components/ui/input';
 import { Textarea } from '../components/ui/textarea';
@@ -93,14 +91,14 @@ export const Home = () => {
               <a href="#voor-wie" className="text-white transition-colors hover:text-[#ffcc4f] font-medium text-sm lg:text-base">
                 Voor Wie?
               </a>
-              <a href="#over" className="text-white transition-colors hover:text-[#ffcc4f] font-medium text-sm lg:text-base">
-                Over Mij
-              </a>
               <a href="#werkwijze" className="text-white transition-colors hover:text-[#ffcc4f] font-medium text-sm lg:text-base">
                 Werkwijze
               </a>
               <a href="#tarieven" className="text-white transition-colors hover:text-[#ffcc4f] font-medium text-sm lg:text-base">
                 Tarieven
+              </a>
+              <a href="#over" className="text-white transition-colors hover:text-[#ffcc4f] font-medium text-sm lg:text-base">
+                Over Mij
               </a>
               <a href="#contact" className="text-white transition-colors hover:text-[#ffcc4f] font-medium text-sm lg:text-base">
                 Contact
@@ -165,13 +163,6 @@ export const Home = () => {
               Voor Wie?
             </a>
             <a
-              href="#over"
-              onClick={() => setMobileMenuOpen(false)}
-              className="rounded-lg py-4 text-center text-lg font-medium text-white transition-colors hover:bg-white/10 hover:text-[#ffcc4f]"
-            >
-              Over Mij
-            </a>
-            <a
               href="#werkwijze"
               onClick={() => setMobileMenuOpen(false)}
               className="rounded-lg py-4 text-center text-lg font-medium text-white transition-colors hover:bg-white/10 hover:text-[#ffcc4f]"
@@ -184,6 +175,13 @@ export const Home = () => {
               className="rounded-lg py-4 text-center text-lg font-medium text-white transition-colors hover:bg-white/10 hover:text-[#ffcc4f]"
             >
               Tarieven
+            </a>
+            <a
+              href="#over"
+              onClick={() => setMobileMenuOpen(false)}
+              className="rounded-lg py-4 text-center text-lg font-medium text-white transition-colors hover:bg-white/10 hover:text-[#ffcc4f]"
+            >
+              Over Mij
             </a>
             <a
               href="#contact"
@@ -276,56 +274,6 @@ export const Home = () => {
         </div>
       </section>
 
-      {/* About Section */}
-      <section id="over" className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
-            <div className="order-2 md:order-1">
-              <div className="inline-block px-4 py-2 bg-[#3bae75]/20 text-[#0e4b4c] rounded-full text-sm font-semibold mb-6">
-                Erkend Specialist
-              </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                {aboutContent.title}
-              </h2>
-              <div className="space-y-4 text-gray-700 leading-relaxed">
-                {aboutContent.paragraphs.map((paragraph, index) => (
-                  <p key={index} className="text-lg">{paragraph}</p>
-                ))}
-              </div>
-              <div className="mt-8 p-6 bg-white rounded-xl border border-gray-200 shadow-sm">
-                <h3 className="font-semibold text-gray-900 mb-4">Professionele Gegevens</h3>
-                <div className="space-y-3 text-sm">
-                  <div className="flex items-center gap-3">
-                    <Award className="h-5 w-5 text-[#0e4b4c]" />
-                    <div>
-                      <span className="font-medium text-gray-900">RIZIV:</span>
-                      <span className="ml-2 text-gray-700">{contactInfo.riziv}</span>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <MapPin className="h-5 w-5 text-[#0e4b4c]" />
-                    <div>
-                      <span className="font-medium text-gray-900">Zetel:</span>
-                      <span className="ml-2 text-gray-700">{contactInfo.address}</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="order-1 md:order-2">
-              <div className="relative">
-                <div className="absolute -inset-4 bg-gradient-to-br from-[#3bae75] to-[#3bae75]/60 rounded-2xl transform rotate-3"></div>
-                <img 
-                  src="/images/profile-siegert.jpg"
-                  alt="Siegert Van de Voorde"
-                  className="relative rounded-2xl shadow-xl w-full h-[500px] object-cover"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Services Section */}
       <section id="diensten" className="py-20 bg-white">
         <div className="container mx-auto px-4">
@@ -404,109 +352,43 @@ export const Home = () => {
         </div>
       </section>
 
-      {/* USP Section - Service at Home */}
-      <section className="py-20 bg-gradient-to-br from-[#3bae75]/10 to-[#0e4b4c]/5">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <div className="inline-block px-4 py-2 bg-[#0e4b4c] text-white rounded-full text-sm font-semibold mb-6">
-                Unieke Service
-              </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                Service aan Huis voor Maatwerk Schoenen
-              </h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                De complete zorg voor uw nieuwe schoenen – van de eerste voetanalyse en maatname tot de uiteindelijke levering – bij u thuis.
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-8 items-center">
-              <div>
-                <img 
-                  src="/images/service-at-home.jpg"
-                  alt="Service aan huis"
-                  className="rounded-2xl shadow-2xl w-full h-[400px] object-cover"
-                />
-              </div>
-              <div className="space-y-6">
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-12 h-12 bg-[#0e4b4c] rounded-lg flex items-center justify-center">
-                    <MapPin className="h-6 w-6 text-white" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold text-gray-900 mb-2">Geen Afstandsbeperking</h3>
-                    <p className="text-gray-600">Waar u ook in België woont, ik kom bij u langs voor een professionele service.</p>
-                  </div>
-                </div>
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-12 h-12 bg-[#0e4b4c] rounded-lg flex items-center justify-center">
-                    <PiHouseBold className="h-6 w-6 text-white" aria-hidden />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold text-gray-900 mb-2">Uw Comfort Voorop</h3>
-                    <p className="text-gray-600">Geen stress om naar een werkplaats te reizen. Alles gebeurt in de vertrouwde omgeving van uw eigen huis.</p>
-                  </div>
-                </div>
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-12 h-12 bg-[#0e4b4c] rounded-lg flex items-center justify-center">
-                    <FaHandsHelping className="h-6 w-6 text-white" aria-hidden />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold text-gray-900 mb-2">Persoonlijke Aandacht</h3>
-                    <p className="text-gray-600">Eén-op-één begeleiding door een ervaren specialist, volledig afgestemd op uw unieke situatie en behoeften.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Process Section */}
+      {/* Werkwijze: service aan huis in drie stappen */}
       <section id="werkwijze" className="py-20 bg-white">
         <div className="container mx-auto px-4">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <div className="inline-block px-4 py-2 bg-[#3bae75]/20 text-[#0e4b4c] rounded-full text-sm font-semibold mb-6">
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <div className="inline-block px-4 py-2 bg-[#0e4b4c] text-white rounded-full text-sm font-semibold mb-6">
               Hoe Het Werkt
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Van Eerste Contact tot Perfecte Pasvorm
+              Alles bij u thuis, in drie stappen
             </h2>
             <p className="text-lg text-gray-600">
-              In drie eenvoudige stappen naar uw maatwerk orthopedische schoenen of steunzolen
+              De complete zorg voor uw nieuwe schoenen – van de eerste voetanalyse en maatname tot de uiteindelijke levering – bij u thuis, met persoonlijke begeleiding van begin tot einde.
             </p>
           </div>
 
-          <div className="max-w-4xl mx-auto">
-            <div className="space-y-8">
-              {processSteps.map((step, index) => (
-                <div key={step.id} className="flex gap-6 items-start group">
-                  <div className="flex-shrink-0">
-                    <div className="w-16 h-16 bg-[#0e4b4c] text-white rounded-full flex items-center justify-center text-2xl font-bold shadow-lg group-hover:scale-110 transition-transform">
-                      {index + 1}
-                    </div>
-                  </div>
-                  <div className="flex-1 pt-2">
-                    <h3 className="text-2xl font-semibold text-gray-900 mb-3">{step.title}</h3>
-                    <p className="text-gray-600 text-lg leading-relaxed">{step.description}</p>
-                  </div>
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {processSteps.map((step, index) => (
+              <div key={step.id} className="flex gap-5 items-start md:flex-col md:items-center md:text-center">
+                <div className="flex-shrink-0 w-12 h-12 md:w-14 md:h-14 bg-[#0e4b4c] text-white rounded-full flex items-center justify-center text-xl font-bold shadow-lg">
+                  {index + 1}
                 </div>
-              ))}
-            </div>
+                <div className="flex-1">
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">{step.title}</h3>
+                  <p className="text-gray-600 leading-relaxed">{step.description}</p>
+                </div>
+              </div>
+            ))}
           </div>
 
-          <div className="mt-16 text-center">
-            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-              <img 
-                src="/images/logo-vdv.jpg"
-                alt="Van de Voorde Orthopedie"
-                className="rounded-xl shadow-lg h-64 w-full object-contain bg-[#0e4b4c] p-6"
-              />
-              <img 
-                src="/images/logo-vdv.jpg"
-                alt="Van de Voorde Orthopedie"
-                className="rounded-xl shadow-lg h-64 w-full object-contain bg-[#0e4b4c] p-6"
-              />
+          <div className="max-w-4xl mx-auto mt-12 grid gap-4 sm:grid-cols-2">
+            <div className="flex items-start gap-3 rounded-xl border-2 border-gray-200 p-5">
+              <MapPin className="mt-0.5 h-5 w-5 flex-shrink-0 text-[#0e4b4c]" aria-hidden />
+              <p className="text-gray-700"><strong>Orthopedische schoenen:</strong> aan huis in heel België.</p>
+            </div>
+            <div className="flex items-start gap-3 rounded-xl border-2 border-gray-200 p-5">
+              <MapPin className="mt-0.5 h-5 w-5 flex-shrink-0 text-[#0e4b4c]" aria-hidden />
+              <p className="text-gray-700"><strong>Steunzolen:</strong> aan huis in de regio Lier, Nijlen, Berlaar, Putte, Heist-op-den-Berg en Herenthout.</p>
             </div>
           </div>
         </div>
@@ -592,6 +474,56 @@ export const Home = () => {
             <p className="mt-4 text-sm text-gray-600">
               Een voorschrift van de huisarts volstaat niet, ook niet voor een hernieuwing. Twijfelt u of uw arts mag voorschrijven? Bel mij, ik kijk het voor u na.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section id="over" className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+            <div className="order-2 md:order-1">
+              <div className="inline-block px-4 py-2 bg-[#3bae75]/20 text-[#0e4b4c] rounded-full text-sm font-semibold mb-6">
+                Erkend Specialist
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                {aboutContent.title}
+              </h2>
+              <div className="space-y-4 text-gray-700 leading-relaxed">
+                {aboutContent.paragraphs.map((paragraph, index) => (
+                  <p key={index} className="text-lg">{paragraph}</p>
+                ))}
+              </div>
+              <div className="mt-8 p-6 bg-white rounded-xl border border-gray-200 shadow-sm">
+                <h3 className="font-semibold text-gray-900 mb-4">Professionele Gegevens</h3>
+                <div className="space-y-3 text-sm">
+                  <div className="flex items-center gap-3">
+                    <Award className="h-5 w-5 text-[#0e4b4c]" />
+                    <div>
+                      <span className="font-medium text-gray-900">RIZIV:</span>
+                      <span className="ml-2 text-gray-700">{contactInfo.riziv}</span>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <MapPin className="h-5 w-5 text-[#0e4b4c]" />
+                    <div>
+                      <span className="font-medium text-gray-900">Zetel:</span>
+                      <span className="ml-2 text-gray-700">{contactInfo.address}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="order-1 md:order-2">
+              <div className="relative">
+                <div className="absolute -inset-4 bg-gradient-to-br from-[#3bae75] to-[#3bae75]/60 rounded-2xl transform rotate-3"></div>
+                <img 
+                  src="/images/profile-siegert.jpg"
+                  alt="Siegert Van de Voorde"
+                  className="relative rounded-2xl shadow-xl w-full h-[500px] object-cover"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>

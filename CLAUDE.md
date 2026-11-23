@@ -30,6 +30,7 @@ Lokaal bekijken: in `frontend` eerst `yarn install`, dan `yarn start` (opent op 
 - **Steunzolen:** aan huis, enkel in de regio Lier, Nijlen, Berlaar, Putte, Heist-op-den-Berg en Herenthout.
 - **Tarieven:** bij schoenen het remgeld per categorie; bij steunzolen enkel de terugbetaling van de mutualiteit. **De eigen prijs van steunzolen niet vermelden.**
 - **Geen wachttijden of levertermijnen** op de website.
+- **Voetanalyse** blijft een aparte tegel bij Diensten: Siegert overweegt er iets voor aan te rekenen (verrekenbaar bij aankoop). Geen bedrag of regeling vermelden tot hij dat beslist heeft.
 - **Voorschrijvers:** de lijst specialisten komt uit artikel 29/1 van de RIZIV-nomenclatuur (versie 01/07/2025). Enkel aanpassen op basis van de officiële tekst.
 - Bedragen en nummers nooit uit het hoofd invullen: navragen of opzoeken in een officiële bron.
 - "Al jarenlang" bij Over mij klopt (ervaring van vóór de eigen zaak).
@@ -42,7 +43,7 @@ Lokaal bekijken: in `frontend` eerst `yarn install`, dan `yarn start` (opent op 
 - Geen adres maken waarop ingestuurde aanvragen op te vragen zijn.
 
 ## Nog te doen
-- Echte foto's in plaats van de twee logo-vakken onder "Hoe het werkt".
+- Echte foto's bij "Hoe het werkt" (de logo-vakken die er als opvulling stonden zijn weggehaald; `service-at-home.jpg` is ook maar een logo en wordt niet meer gebruikt).
 - Bevestigingsmail naar de bezoeker werkt nog niet (vermoedelijk het domein bij Resend verifiëren).
 - Schoenadvies (plan van Siegert): op elke klachtenpagina specifiek schoenadvies bij die klacht, plus één algemene pagina "Schoenadvies". **De webshop comfortschoenendelelie.be (Siegerts andere zaak) wordt enkel op die algemene pagina vermeld**, open als zijn eigen webshop, zonder producten, prijzen of volglinks. Geen medische beloftes over comfortschoenen. Eerst navragen bij de beroepsvereniging of dit mag binnen de reclameregels.
 - Profielfoto verkleinen (nu 1,5 MB).
