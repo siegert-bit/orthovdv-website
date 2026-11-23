@@ -44,5 +44,5 @@ Lokaal bekijken: in `frontend` eerst `yarn install`, dan `yarn start` (opent op 
 ## Nog te doen
 - Echte foto's in plaats van de twee logo-vakken onder "Hoe het werkt".
 - Bevestigingsmail naar de bezoeker werkt nog niet (vermoedelijk het domein bij Resend verifiëren).
-- Eventueel een bescheiden link naar comfortschoenendelelie.be (Siegerts andere zaak).
+- Schoenadvies (plan van Siegert): op elke klachtenpagina specifiek schoenadvies bij die klacht, plus één algemene pagina "Schoenadvies". **De webshop comfortschoenendelelie.be (Siegerts andere zaak) wordt enkel op die algemene pagina vermeld**, open als zijn eigen webshop, zonder producten, prijzen of volglinks. Geen medische beloftes over comfortschoenen. Eerst navragen bij de beroepsvereniging of dit mag binnen de reclameregels.
 - Profielfoto verkleinen (nu 1,5 MB).
