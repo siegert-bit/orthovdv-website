@@ -43,7 +43,9 @@ Lokaal bekijken: in `frontend` eerst `yarn install`, dan `yarn start` (opent op 
 - Geen adres maken waarop ingestuurde aanvragen op te vragen zijn.
 
 ## Nog te doen
-- Echte foto's bij "Hoe het werkt" (de logo-vakken die er als opvulling stonden zijn weggehaald; `service-at-home.jpg` is ook maar een logo en wordt niet meer gebruikt).
+- Echte foto's terugzetten zodra Siegert ze heeft. Er stonden drie vakken met een logo als opvulling; die zijn weggehaald. Hun plaatsen (alles in het blok "Hoe het werkt" op de startpagina, `Home.jsx`):
+  - **Eén grote foto "service aan huis"**: links naast de drie stappen (op gsm erboven), liggend formaat, ongeveer 400 px hoog. Het oude bestand `service-at-home.jpg` is ook maar een logo en wordt niet meer gebruikt.
+  - **Twee foto's naast elkaar onder de drie stappen**: elk ongeveer 256 px hoog, op gsm onder elkaar. Bedoeld voor bv. de maatname, een passchoen of een afgewerkte schoen.
 - Bevestigingsmail naar de bezoeker werkt nog niet (vermoedelijk het domein bij Resend verifiëren).
 - Schoenadvies (plan van Siegert): op elke klachtenpagina specifiek schoenadvies bij die klacht, plus één algemene pagina "Schoenadvies". **De webshop comfortschoenendelelie.be (Siegerts andere zaak) wordt enkel op die algemene pagina vermeld**, open als zijn eigen webshop, zonder producten, prijzen of volglinks. Geen medische beloftes over comfortschoenen. Eerst navragen bij de beroepsvereniging of dit mag binnen de reclameregels.
 - Profielfoto verkleinen (nu 1,5 MB).
