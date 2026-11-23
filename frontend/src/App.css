@@ -3,13 +3,6 @@ html {
     scroll-behavior: smooth;
 }
 
-/* Hide Emergent watermark */
-[href*="emergent"],
-[href*="Emergent"],
-a[href*="preview.emergentagent.com"] {
-    display: none !important;
-}
-
 /* Custom animations */
 @keyframes fadeIn {
     from {

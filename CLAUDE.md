@@ -18,6 +18,7 @@ Lees dit eerst. Dit zijn de afspraken voor iedereen (ook elke Claude-sessie) die
 - `frontend/` – de website (React, Tailwind, craco). Eén pagina: `src/pages/Home.jsx`. Privacyverklaring: `src/pages/Privacy.jsx`.
 - `frontend/src/data/klachten.js` – de teksten over klachten (blok "Voor wie?" op de startpagina en de pagina's `/klachten/...`, opgebouwd door `src/pages/Klacht.jsx`). Een klacht toevoegen = daar een blok bijzetten. Medische uitleg altijd door Siegert laten nalezen; geen diagnoses of beloftes.
 - `frontend/src/data/mock.js` – naam, adres, e-mail, telefoon, btw-nummer, RIZIV-nummer en de teksten van diensten en werkwijze. **Pas contactgegevens hier aan**, niet op tien plaatsen.
+- `frontend/scripts/prerender.js` – draait automatisch na `yarn build` en bouwt elke pagina vooraf als gewone HTML (goed voor Google), plus `sitemap.xml` en `robots.txt`. Komt er een pagina bij met een eigen adres, zet ze dan ook in de lijst `pages` in dat script.
 - `frontend/public/images/` – foto's en logo's.
 - `backend/` – kleine Python-server (FastAPI) op Render. Doet één ding: het contactformulier per e-mail doorsturen (via Resend). Er is **geen database**; dat is bewust.
 - Instellingen en sleutels staan in `.env`-bestanden die niet in deze opslagplaats zitten, en bij Render onder Environment.
@@ -48,4 +49,3 @@ Lokaal bekijken: in `frontend` eerst `yarn install`, dan `yarn start` (opent op 
   - **Twee foto's naast elkaar onder de drie stappen**: elk ongeveer 256 px hoog, op gsm onder elkaar. Bedoeld voor bv. de maatname, een passchoen of een afgewerkte schoen.
 - Bevestigingsmail naar de bezoeker werkt nog niet (vermoedelijk het domein bij Resend verifiëren).
 - Schoenadvies (plan van Siegert): op elke klachtenpagina specifiek schoenadvies bij die klacht, plus één algemene pagina "Schoenadvies". **De webshop comfortschoenendelelie.be (Siegerts andere zaak) wordt enkel op die algemene pagina vermeld**, open als zijn eigen webshop, zonder producten, prijzen of volglinks. Geen medische beloftes over comfortschoenen. Eerst navragen bij de beroepsvereniging of dit mag binnen de reclameregels.
-- Profielfoto verkleinen (nu 1,5 MB).
