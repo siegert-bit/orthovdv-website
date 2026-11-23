@@ -16,6 +16,7 @@ Lees dit eerst. Dit zijn de afspraken voor iedereen (ook elke Claude-sessie) die
 
 ## Opbouw
 - `frontend/` – de website (React, Tailwind, craco). Eén pagina: `src/pages/Home.jsx`. Privacyverklaring: `src/pages/Privacy.jsx`.
+- `frontend/src/data/klachten.js` – de teksten over klachten (blok "Voor wie?" op de startpagina en de pagina's `/klachten/...`, opgebouwd door `src/pages/Klacht.jsx`). Een klacht toevoegen = daar een blok bijzetten. Medische uitleg altijd door Siegert laten nalezen; geen diagnoses of beloftes.
 - `frontend/src/data/mock.js` – naam, adres, e-mail, telefoon, btw-nummer, RIZIV-nummer en de teksten van diensten en werkwijze. **Pas contactgegevens hier aan**, niet op tien plaatsen.
 - `frontend/public/images/` – foto's en logo's.
 - `backend/` – kleine Python-server (FastAPI) op Render. Doet één ding: het contactformulier per e-mail doorsturen (via Resend). Er is **geen database**; dat is bewust.

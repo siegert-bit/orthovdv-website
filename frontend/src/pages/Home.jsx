@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { Phone, Mail, MapPin, Award, Clock, Shield, Menu, X } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
+import { Phone, Mail, MapPin, Award, Clock, Shield, Menu, X, ArrowRight } from 'lucide-react';
 import { WhatsAppLogo } from '../components/WhatsAppLogo';
 import { ServiceIcon } from '../components/ServiceIcon';
 import { PiHouseBold } from 'react-icons/pi';
@@ -11,6 +11,7 @@ import { Textarea } from '../components/ui/textarea';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../components/ui/card';
 import { toast } from 'sonner';
 import { contactInfo, services, processSteps, aboutContent } from '../data/mock';
+import { klachten } from '../data/klachten';
 import axios from 'axios';
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
@@ -33,6 +34,14 @@ export const Home = () => {
     if (!BACKEND_URL) return;
     fetch(`${API}/`, { mode: 'no-cors' }).catch(() => {});
   }, []);
+
+  // Komt iemand van een andere pagina naar bv. /#contact, spring dan naar dat onderdeel.
+  const { hash } = useLocation();
+  useEffect(() => {
+    if (!hash) return;
+    const el = document.getElementById(hash.slice(1));
+    if (el) el.scrollIntoView({ behavior: 'instant' });
+  }, [hash]);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -76,10 +85,13 @@ export const Home = () => {
       {/* Vaste navigatiebalk bovenaan (boven logo in de layout); blijft zichtbaar bij scrollen */}
       <header className="fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-[#0e4b4c]/95 shadow-sm backdrop-blur-md">
         <div className="container relative mx-auto px-4">
-          <div className="hidden md:flex flex-row flex-wrap items-center justify-center gap-6 py-2.5 lg:gap-8 lg:py-3">
-            <nav className="flex items-center gap-6 lg:gap-8" aria-label="Hoofdnavigatie">
+          <div className="hidden md:flex flex-row flex-wrap items-center justify-center gap-4 py-2.5 lg:gap-8 lg:py-3">
+            <nav className="flex items-center gap-4 lg:gap-8" aria-label="Hoofdnavigatie">
               <a href="#diensten" className="text-white transition-colors hover:text-[#ffcc4f] font-medium text-sm lg:text-base">
                 Diensten
+              </a>
+              <a href="#voor-wie" className="text-white transition-colors hover:text-[#ffcc4f] font-medium text-sm lg:text-base">
+                Voor Wie?
               </a>
               <a href="#over" className="text-white transition-colors hover:text-[#ffcc4f] font-medium text-sm lg:text-base">
                 Over Mij
@@ -144,6 +156,13 @@ export const Home = () => {
               className="rounded-lg py-4 text-center text-lg font-medium text-white transition-colors hover:bg-white/10 hover:text-[#ffcc4f]"
             >
               Diensten
+            </a>
+            <a
+              href="#voor-wie"
+              onClick={() => setMobileMenuOpen(false)}
+              className="rounded-lg py-4 text-center text-lg font-medium text-white transition-colors hover:bg-white/10 hover:text-[#ffcc4f]"
+            >
+              Voor Wie?
             </a>
             <a
               href="#over"
@@ -342,6 +361,46 @@ export const Home = () => {
               </Card>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Voor wie? Klachten waarbij een schoen of steunzool kan helpen */}
+      <section id="voor-wie" className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <div className="inline-block px-4 py-2 bg-[#3bae75]/20 text-[#0e4b4c] rounded-full text-sm font-semibold mb-6">
+              Voor Wie?
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Bij welke klachten kan ik helpen?
+            </h2>
+            <p className="text-lg text-gray-600">
+              Een aangepaste schoen of steunzool kan het stappen opnieuw comfortabeler maken. Lees meer over enkele klachten die ik vaak zie.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {klachten.map((klacht) => (
+              <Link
+                key={klacht.slug}
+                to={`/klachten/${klacht.slug}`}
+                className="group flex flex-col rounded-xl border-2 border-gray-200 bg-white p-6 transition-all duration-300 hover:border-[#3bae75] hover:shadow-xl"
+              >
+                <span className="text-sm font-semibold text-[#3bae75]">{klacht.subtitle}</span>
+                <h3 className="mt-1 text-xl font-semibold text-gray-900">{klacht.title}</h3>
+                <p className="mt-3 flex-1 text-gray-600 leading-relaxed">{klacht.summary}</p>
+                <span className="mt-5 inline-flex items-center font-semibold text-[#0e4b4c] group-hover:underline">
+                  Meer lezen
+                  <ArrowRight className="ml-2 h-4 w-4" aria-hidden />
+                </span>
+              </Link>
+            ))}
+          </div>
+
+          <p className="mt-10 text-center text-gray-600">
+            Staat uw klacht er niet bij?{' '}
+            <a href="#contact" className="font-semibold text-[#0e4b4c] underline">Neem gerust contact op</a>.
+          </p>
         </div>
       </section>
 
