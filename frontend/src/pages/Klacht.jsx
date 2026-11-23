@@ -4,6 +4,7 @@ import { Phone, ArrowLeft, ArrowRight } from 'lucide-react';
 import { WhatsAppLogo } from '../components/WhatsAppLogo';
 import { contactInfo } from '../data/mock';
 import { klachten, getKlacht } from '../data/klachten';
+import { VoetenHalluxValgus, SchoenTekening } from '../components/Illustraties';
 
 const DEFAULT_TITLE = 'Orthopedie Van de Voorde | Maatwerk Schoenen aan Huis | orthovdv';
 
@@ -60,6 +61,7 @@ export const Klacht = () => {
                   <p key={p}>{p}</p>
                 ))}
               </div>
+              {klacht.illustratie === 'hallux-valgus' && <VoetenHalluxValgus />}
             </section>
 
             <section className="mb-10">
@@ -100,14 +102,20 @@ export const Klacht = () => {
                 <p className="text-gray-700 leading-relaxed mb-4">
                   Ook bij het kopen van gewone schoenen kunt u al veel doen. Let op deze punten:
                 </p>
-                <ul className="space-y-2 text-gray-700 leading-relaxed">
-                  {klacht.shoeAdvice.map((s) => (
-                    <li key={s} className="flex items-start gap-3">
-                      <span className="mt-2.5 h-2 w-2 flex-shrink-0 rounded-full bg-[#3bae75]" />
-                      <span>{s}</span>
+                <SchoenTekening
+                  punten={klacht.shoeAdvice.map((a) => a.punt)}
+                  afwikkelzool={klacht.afwikkelzool}
+                />
+                <ol className="space-y-3 text-gray-700 leading-relaxed">
+                  {klacht.shoeAdvice.map((a, i) => (
+                    <li key={a.punt} className="flex items-start gap-3">
+                      <span className="mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-[#ffcc4f] text-sm font-bold text-[#0e4b4c]">
+                        {i + 1}
+                      </span>
+                      <span>{a.text}</span>
                     </li>
                   ))}
-                </ul>
+                </ol>
               </section>
             )}
 

@@ -34,12 +34,13 @@ export const klachten = [
       }
     ],
     shoeAdvice: [
-      "Kies een schoen met een brede, ruime voorvoet, zodat de tenen niet samengedrukt worden. Vermijd smalle en spitse modellen.",
-      "Zacht en soepel bovenmateriaal, zonder naden of stiksels ter hoogte van de knobbel.",
-      "Een lage hak. Hoe hoger de hak, hoe meer druk er op de voorvoet komt.",
-      "Een sluiting met veters of klittenband, zodat de voet goed vastzit en niet naar voren schuift.",
-      "Een uitneembare binnenzool, zodat er plaats is voor een steunzool."
-    ]
+      { punt: "voorvoet", text: "Kies een schoen met een brede, ruime voorvoet, zodat de tenen niet samengedrukt worden. Vermijd smalle en spitse modellen." },
+      { punt: "bovenmateriaal", text: "Zacht en soepel bovenmateriaal, zonder naden of stiksels ter hoogte van de knobbel." },
+      { punt: "hak", text: "Een lage hak. Hoe hoger de hak, hoe meer druk er op de voorvoet komt." },
+      { punt: "sluiting", text: "Een sluiting met veters of klittenband, zodat de voet goed vastzit en niet naar voren schuift." },
+      { punt: "binnenzool", text: "Een uitneembare binnenzool, zodat er plaats is voor een steunzool." }
+    ],
+    illustratie: "hallux-valgus"
   },
   {
     slug: "artrose",
@@ -71,13 +72,14 @@ export const klachten = [
       }
     ],
     shoeAdvice: [
-      "Een stevige zool die weinig plooit ter hoogte van de voorvoet. Hoe minder de schoen buigt, hoe minder het gewricht moet bewegen.",
-      "Een zool met een lichte ronding naar de tip toe, die helpt bij het afrollen van de voet.",
-      "Een schokdempende zool en hak, die de stoot bij elke stap opvangen.",
-      "Een stevige hielkap en een sluiting met veters of klittenband, voor een stabiele stand.",
-      "Voldoende ruimte op de plaats waar het gewricht verdikt is.",
-      "Een uitneembare binnenzool, zodat er plaats is voor een steunzool."
-    ]
+      { punt: "zool", text: "Een stevige zool die weinig plooit ter hoogte van de voorvoet. Hoe minder de schoen buigt, hoe minder het gewricht moet bewegen." },
+      { punt: "ronding", text: "Een zool met een lichte ronding naar de tip toe, die helpt bij het afrollen van de voet." },
+      { punt: "demping", text: "Een schokdempende zool en hak, die de stoot bij elke stap opvangen." },
+      { punt: "hielkap", text: "Een stevige hielkap en een sluiting met veters of klittenband, voor een stabiele stand." },
+      { punt: "ruimte", text: "Voldoende ruimte op de plaats waar het gewricht verdikt is." },
+      { punt: "binnenzool", text: "Een uitneembare binnenzool, zodat er plaats is voor een steunzool." }
+    ],
+    afwikkelzool: true
   }
 ];
 
