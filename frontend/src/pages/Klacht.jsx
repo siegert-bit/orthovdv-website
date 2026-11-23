@@ -92,6 +92,25 @@ export const Klacht = () => {
               </p>
             </section>
 
+            {klacht.shoeAdvice && klacht.shoeAdvice.length > 0 && (
+              <section className="mb-10">
+                <h2 className="text-xl md:text-2xl font-semibold text-gray-900 mb-3">
+                  Schoenadvies: waar let u op?
+                </h2>
+                <p className="text-gray-700 leading-relaxed mb-4">
+                  Ook bij het kopen van gewone schoenen kunt u al veel doen. Let op deze punten:
+                </p>
+                <ul className="space-y-2 text-gray-700 leading-relaxed">
+                  {klacht.shoeAdvice.map((s) => (
+                    <li key={s} className="flex items-start gap-3">
+                      <span className="mt-2.5 h-2 w-2 flex-shrink-0 rounded-full bg-[#3bae75]" />
+                      <span>{s}</span>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            )}
+
             <section className="mb-10">
               <h2 className="text-xl md:text-2xl font-semibold text-gray-900 mb-3">Eerst langs de arts</h2>
               <div className="space-y-3 text-gray-700 leading-relaxed">
